@@ -1,0 +1,89 @@
+html,
+body {
+	height: 100%;
+}
+body {
+	min-width: 256px;
+	/* set default color  */
+	background-color: var(--color-secondary);
+	color: var(--color-primary);
+
+	/* set default font  */
+	font-family: 'Roboto Mono', monospace;
+	font-size: 18px;
+	font-size: clamp(12px, 2vw, 20px);
+	font-weight: 400;
+
+	/* reset box sizing on body */
+	box-sizing: border-box;
+	padding: 1em;
+	margin: 0;
+}
+
+body > div#svelte {
+	/* helps to have a default sized page */
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+*::selection {
+	background: var(--color-accent);
+	color: var(--color-primary);
+}
+
+a {
+	color: var(--color-accent-cta);
+	text-decoration: none;
+}
+
+a:focus,
+a:hover {
+	text-decoration: underline;
+}
+
+address {
+	font-style: normal;
+	display: inline;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+h1 {
+	font-size: 2em;
+}
+h2 {
+	font-size: 1.75em;
+}
+h3 {
+	font-size: 1.5em;
+}
+h4 {
+	font-size: 1.25em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 0.875em;
+}
+
+img {
+	display: block;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}

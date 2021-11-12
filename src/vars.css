@@ -1,0 +1,10 @@
+:root {
+	/* colors --color- <group> - <variation> */
+	--color-primary: #fceefc;
+	--color-secondary: #282a36;
+	--color-accent: #f25169;
+	--color-accent-cta: #32d97b;
+
+	/* set a size basis for main content */
+	--main-content-width: 960px;
+}
