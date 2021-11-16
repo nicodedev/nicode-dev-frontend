@@ -18,7 +18,7 @@
 	ul {
 		display: flex;
 		flex-direction: column;
-		gap: 2em;
+		gap: 3em;
 
 		counter-reset: projex;
 	}
@@ -30,12 +30,12 @@
 		display: flex;
 		flex-direction: column;
 		font-size: 0.9em;
+		counter-increment: projex;
 	}
 
 	/* counting */
 	li::after {
 		position: absolute;
-		counter-increment: projex;
 		content: '0' counter(projex);
 		right: 0.5em;
 		top: -0.75em;

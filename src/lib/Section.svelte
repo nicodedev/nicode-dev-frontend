@@ -17,6 +17,7 @@
 <style>
 	section {
 		max-width: var(--main-content-width);
+		margin: 8px;
 	}
 	section h2 {
 		margin-bottom: 1em;
