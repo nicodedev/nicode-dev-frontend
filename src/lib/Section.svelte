@@ -26,6 +26,9 @@
 		color: var(--color-accent-cta);
 		user-select: none;
 	}
+	section:target h2 a {
+		opacity: 0.5;
+	}
 	@media (min-width: 1100px) {
 		section h2 {
 			position: relative;
@@ -33,15 +36,16 @@
 		section h2 a {
 			position: absolute;
 			left: -1em;
+			opacity: 0;
+			transition: opacity 0.2s 0.2s;
+		}
+		section:hover h2 a {
+			opacity: 1;
+			transition: opacity 0.1s;
 		}
 	}
-
 	/* scrolling */
 	section {
 		scroll-margin: 2rem 0 0 0;
-	}
-
-	section:target h2 {
-		text-decoration: underline;
 	}
 </style>
