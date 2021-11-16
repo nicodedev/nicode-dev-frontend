@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProjectsSection from '$lib/projects/ProjectsSection.svelte';
+	import ProjectsView from '$lib/projects/ProjectsView.svelte';
 	import { consultants } from '$lib/content';
 	import ConsultantHeroSection from '$lib/intro/ConsultantHeroSection.svelte';
 	import Section from '$lib/Section.svelte';
@@ -12,16 +12,27 @@
 <article>
 	<ConsultantHeroSection {consultant} />
 
-	<Section title="Availability" text={availability} />
-	<Section title="About Me" text={focus} />
+	<Section title="Availability">
+		<p>
+			{availability}
+		</p>
+	</Section>
 
-	<ProjectsSection {consultant} />
+	<Section title="About Me">
+		<p>
+			{focus}
+		</p>
+	</Section>
+
+	<Section title="Experience and projects">
+		<ProjectsView {consultant} />
+	</Section>
 </article>
 
 <style>
 	article {
 		display: flex;
 		flex-direction: column;
-		gap: 5em;
+		gap: 4em;
 	}
 </style>
