@@ -1,6 +1,9 @@
 html,
 body {
 	height: 100%;
+
+	/* this might break shit if fancy hash nav */
+	scroll-behavior: smooth;
 }
 body {
 	min-width: 256px;
