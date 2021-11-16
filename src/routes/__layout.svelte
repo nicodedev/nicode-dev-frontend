@@ -1,6 +1,6 @@
 <script lang="ts">
-	import '../app.css';
-	import '../vars.css';
+	import '../default.css';
+	import '../config.css';
 	import Nicode from '$lib/logo/Nicode.svelte';
 </script>
 
@@ -35,8 +35,9 @@
 	footer p {
 		max-width: var(--main-content-width);
 		width: 100%;
-		opacity: 0.1;
+		opacity: 0.6;
 		transition: opacity 1.1s 2s;
+		font-size: 0.65em;
 	}
 	footer:hover p {
 		transition: opacity 0.2s;
