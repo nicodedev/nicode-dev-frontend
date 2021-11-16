@@ -8,3 +8,10 @@
 	/* set a size basis for main content */
 	--main-content-width: 960px;
 }
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0s !important;
+		transition-duration: 0s !important;
+	}
+}
