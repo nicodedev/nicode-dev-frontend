@@ -4,9 +4,9 @@
 	$: id = encodeURIComponent(title.toLowerCase().replace(/\s/g, '-'));
 </script>
 
-<section>
+<section {id}>
 	{#if title}
-		<h2 {id}>
+		<h2>
 			<a href="#{id}">#</a>
 			{title}
 		</h2>
@@ -35,7 +35,7 @@
 	}
 
 	/* scrolling */
-	h2 {
-		scroll-margin: 1em 0 0 0;
+	section {
+		scroll-margin: 2rem 0 0 0;
 	}
 </style>
