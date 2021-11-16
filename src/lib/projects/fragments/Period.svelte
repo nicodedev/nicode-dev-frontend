@@ -3,7 +3,7 @@
 
 	const YYYYMM = (d: Date) => {
 		const date = new Date(d);
-		return date.getFullYear() + '-' + (date.getMonth() + 1);
+		return date.getFullYear() + '/' + (date.getMonth() + 1);
 	};
 	let from = YYYYMM(period.from);
 	let to = YYYYMM(period.to);
@@ -11,8 +11,11 @@
 
 <div>
 	<time datetime={from}>{from}</time>
-	{#if to}
+	-
+	{#if period.to}
 		<time datetime={to}>{to}</time>
+	{:else}
+		<time>present</time>
 	{/if}
 </div>
 
