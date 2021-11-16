@@ -23,6 +23,7 @@
 	}
 	section h2 a {
 		color: var(--color-accent-cta);
+		user-select: none;
 	}
 	@media (min-width: 1100px) {
 		section h2 {
@@ -37,5 +38,9 @@
 	/* scrolling */
 	section {
 		scroll-margin: 2rem 0 0 0;
+	}
+
+	section:target h2 {
+		text-decoration: underline;
 	}
 </style>
