@@ -33,4 +33,9 @@
 			left: -1em;
 		}
 	}
+
+	/* scrolling */
+	h2 {
+		scroll-margin: 1em 0 0 0;
+	}
 </style>

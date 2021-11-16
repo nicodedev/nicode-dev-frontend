@@ -22,7 +22,7 @@
 		content: '';
 		position: absolute;
 
-		border: 0.4em solid var(--color-accent-cta);
+		border: 0.2em solid var(--color-accent-cta);
 
 		top: 0;
 		left: 0;
@@ -48,7 +48,6 @@
 		div::before {
 			width: 100%;
 			height: 100%;
-			border: 2px solid var(--color-accent-cta);
 			transform: rotate(10deg);
 		}
 	}
