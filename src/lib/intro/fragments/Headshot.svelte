@@ -22,7 +22,8 @@
 		content: '';
 		position: absolute;
 
-		border: 0.2em solid var(--color-accent-cta);
+		border: 2px solid var(--color-accent-cta);
+		border-radius: 4px;
 
 		top: 0;
 		left: 0;
