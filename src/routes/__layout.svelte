@@ -31,6 +31,7 @@
 	}
 	main {
 		flex: auto;
+		padding: 50px 0;
 	}
 	footer p {
 		max-width: var(--main-content-width);
