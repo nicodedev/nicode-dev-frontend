@@ -1,7 +1,7 @@
 export const consultants = [
 	{
 		shortName: 'Nicolai',
-		headshot: 'nicolai.bmp',
+		headshot: 'nicolai.webp',
 		intro:
 			'Hi! I’m Nicolai, a freelance developer with a passion for people and technology. <address>Say hi to me by <a href="mailto:nicolai@gjellestad.net" class="_e47dfe9a">mail</a>, <a href="tel:+4799428603" class="_e47dfe9a">telephone <span class="_b1deac8a">994 28 603</span></a> or <a href="https://www.linkedin.com/in/ngjellestad/">LinkedIn</a>.</address>',
 
@@ -37,7 +37,7 @@ export const consultants = [
 	},
 	{
 		shortName: 'Hans',
-		headshot: 'hans.bmp',
+		headshot: 'hans.webp',
 		intro:
 			"Hi! I’m Hans, a developer with a passion for making great user experiences. <address>Say hi to me by <a href='mailto:box@melaa.net'>mail</a> or <a href='tel:+4748149606'>telephone <span>481 49 606</span></a>.</address>",
 
