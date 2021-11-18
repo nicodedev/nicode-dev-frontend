@@ -16,11 +16,7 @@
 	@media (max-width: 600px) {
 		p {
 			max-width: 300px;
-		}
-	}
-	@media (max-width: 480px) {
-		p {
-			text-align: center;
+			text-align: justify;
 		}
 	}
 </style>
