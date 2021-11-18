@@ -16,19 +16,13 @@
 
 <style>
 	section {
+		scroll-margin: 2rem 0 0 0;
 		max-width: var(--main-content-width);
-		margin: 8px;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
 	}
-	section h2 {
-		margin-bottom: 1em;
-	}
-	section h2 a {
-		color: var(--color-accent-cta);
-		user-select: none;
-	}
-	section:target h2 a {
-		opacity: 0.5;
-	}
+
 	@media (min-width: 1100px) {
 		section h2 {
 			position: relative;
@@ -36,16 +30,14 @@
 		section h2 a {
 			position: absolute;
 			left: -1em;
+			transition: opacity 0.1s 0.1s ease-in-out;
 			opacity: 0;
-			transition: opacity 0.2s 0.2s;
 		}
-		section:hover h2 a {
+		section:hover h2 > a,
+		section:focus-within h2 > a,
+		section:target h2 > a {
+			transition: opacity 0.05s ease-in-out;
 			opacity: 1;
-			transition: opacity 0.1s;
 		}
-	}
-	/* scrolling */
-	section {
-		scroll-margin: 2rem 0 0 0;
 	}
 </style>
