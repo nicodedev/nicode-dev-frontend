@@ -56,7 +56,7 @@
 	@media (min-width: 960px) {
 		div:hover::after,
 		div:hover::before {
-			transition: transform 0.3s 0.5s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+			transition: transform 0.3s 0.8s ease-out, width 0.5s ease-out, height 0.5s ease-out;
 			transform: rotate(-45deg);
 		}
 	}
