@@ -23,6 +23,10 @@
 		gap: 1em;
 	}
 
+	section h2 {
+		max-width: max-content;
+	}
+
 	@media (min-width: 1100px) {
 		section h2 {
 			position: relative;
@@ -33,8 +37,8 @@
 			transition: opacity 0.1s 0.1s ease-in-out;
 			opacity: 0;
 		}
-		section:hover h2 > a,
-		section:focus-within h2 > a,
+		section h2:hover > a,
+		section h2:focus-within > a,
 		section:target h2 > a {
 			transition: opacity 0.05s ease-in-out;
 			opacity: 1;
