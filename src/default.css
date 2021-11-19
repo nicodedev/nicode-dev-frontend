@@ -19,7 +19,7 @@ body {
 
 	/* reset box sizing on body */
 	box-sizing: border-box;
-	padding: 1em;
+	padding: 0;
 	margin: 0;
 }
 
