@@ -18,34 +18,57 @@
 	ul {
 		display: flex;
 		flex-direction: column;
-		gap: 3em;
+		gap: 4em;
 
 		counter-reset: projex;
 	}
 	li {
 		position: relative;
 		padding: 1em;
-		border: 2px solid var(--color-accent);
-		border-radius: 4px;
 		display: flex;
 		flex-direction: column;
 		font-size: 0.9em;
 		counter-increment: projex;
 	}
+	@media (min-width: 1100px) {
+		li {
+			padding: 2em;
+		}
+	}
 
-	/* counting */
 	li::after {
 		position: absolute;
 		content: '0' counter(projex);
-		right: 0.5em;
-		top: -0.75em;
+		right: 1em;
+		top: -0.735em;
 		font-size: 2em;
 		text-align: right;
-		padding: 0 0.5em;
-		background-color: var(--color-secondary);
 		color: var(--color-accent);
 	}
 	li:nth-of-type(n + 10):after {
 		content: counter(projex);
+	}
+
+	li::before {
+		border: 2px solid var(--color-accent);
+		position: absolute;
+		content: '';
+		z-index: -1;
+		right: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 4px;
+
+		clip-path: polygon(
+			-2% -2%,
+			calc(100% - 5.5em) -2%,
+			calc(100% - 5.5em) 10%,
+			calc(100% - 1em) 10%,
+			calc(100% - 1em) -2%,
+			102% -2%,
+			102% 102%,
+			-2% 102%
+		);
 	}
 </style>
