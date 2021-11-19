@@ -1,14 +1,16 @@
 :root {
 	/* colors --color- <group> - <variation> */
-	--color-primary: #fceefc;
+
+	/* --color-primary: #fceefc;
 	--color-secondary: #282a36;
 	--color-accent: #f25169;
-	--color-accent-cta: #32d97b;
+	--color-accent-cta: #32d97b; */
 
-	/* --color-primary: #c6c6c6;
-	--color-secondary: #424242;
-	--color-accent: #686868;
-	--color-accent-cta: #b7b7b7; */
+	/* more contrast */
+	--color-primary: #fceefc;
+	--color-secondary: #1b1c26;
+	--color-accent: #ff4d44;
+	--color-accent-cta: #6eff9f;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;
