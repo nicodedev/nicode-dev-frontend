@@ -4,7 +4,28 @@ body {
 
 	/* this might break shit if fancy hash nav */
 	scroll-behavior: smooth;
+
+	/* prewent layout shift (plz) */
+	scrollbar-gutter: stable;
+	/* firefox only  :( */
+	scrollbar-color: var(--color-accent-cta) var(--color-secondary);
+	scrollbar-width: thin;
 }
+
+body::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+body::-webkit-scrollbar-track-piece {
+	background-color: var(--color-secondary);
+}
+
+body::-webkit-scrollbar-thumb:vertical {
+	height: 30px;
+	background-color: var(--color-accent-cta);
+}
+
 body {
 	min-width: 256px;
 	/* set default color  */
