@@ -2,9 +2,7 @@
 	import '../default.css';
 	import '../config.css';
 	import Nicode from '$lib/logo/Nicode.svelte';
-
-	let scrollY = 0;
-	// $: pos = scrollY /
+	import Layer0 from '$lib/Layer0.svelte';
 </script>
 
 <svelte:head>
@@ -22,8 +20,8 @@
 <footer>
 	<p>Created by <strike>Nicolai</strike> Hans in <strike>Elm</strike> Svelte</p>
 </footer>
-<div aria-hidden="true" />
-<svelte:window bind:scrollY />
+
+<Layer0 />
 
 <style>
 	header,
@@ -51,24 +49,5 @@
 	footer:hover p {
 		transition: opacity 0.2s;
 		opacity: 1;
-	}
-
-	div {
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-		position: fixed;
-		z-index: -5;
-
-		background-image: image-set(url('bgs/t1.webp') 1x, url('bgs/t1.jpg') 1x);
-		background-image: -webkit-image-set(url('bgs/t1.webp') 1x, url('bgs/t1.jpg') 1x);
-
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-attachment: fixed;
-
-		opacity: 0.05;
 	}
 </style>

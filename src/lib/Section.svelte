@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let title;
 
 	$: id = encodeURIComponent(title.toLowerCase().replace(/\s/g, '-'));

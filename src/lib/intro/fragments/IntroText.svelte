@@ -1,5 +1,5 @@
-<script>
-	export let consultant;
+<script lang="ts">
+	export let consultant: ConsultantType;
 
 	$: ({ preamble, email, mobile, linkedin } = consultant.intro);
 </script>
