@@ -2,8 +2,12 @@ export const consultants = [
 	{
 		shortName: 'Nicolai',
 		headshot: 'hs/nicolai.webp',
-		intro:
-			'Hi! I’m Nicolai, a freelance developer with a passion for people and technology. <address>Say hi to me by <a href="mailto:nicolai@gjellestad.net" class="_e47dfe9a">mail</a>, <a href="tel:+4799428603" class="_e47dfe9a">telephone <span class="_b1deac8a">994 28 603</span></a> or <a href="https://www.linkedin.com/in/ngjellestad/">LinkedIn</a>.</address>',
+		intro: {
+			preamble: 'Hi! I’m Nicolai, a freelance developer with a passion for people and technology. ',
+			email: 'nicolai@gjellestad.net',
+			mobile: '+4799428603',
+			linkedin: 'ngjellestad'
+		},
 
 		availability:
 			"I'm available for full time projects from August 2022, but I may be open for smaller projects before this. Contact me!",
@@ -38,8 +42,12 @@ export const consultants = [
 	{
 		shortName: 'Hans',
 		headshot: 'hs/hans.webp',
-		intro:
-			"Hi! I’m Hans, a developer with a passion for making great user experiences. <address>Say hi to me by <a href='mailto:box@melaa.net'>mail</a> or <a href='tel:+4748149606'>telephone <span>481 49 606</span></a>.</address>",
+		intro: {
+			preamble: 'Hi! I’m Hans, a developer with a passion for making great user experiences.',
+			email: 'box@melaa.net',
+			mobile: '+4748149606',
+			linkedin: ''
+		},
 
 		availability: "I'm available for full time projects from January 2022. Contact me!",
 
