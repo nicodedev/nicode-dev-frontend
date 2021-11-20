@@ -16,7 +16,7 @@
 
 <style>
 	section {
-		scroll-margin: 2rem 0 0 0;
+		scroll-margin: 6rem 0 0 0;
 		max-width: var(--main-content-width);
 		display: flex;
 		flex-direction: column;
