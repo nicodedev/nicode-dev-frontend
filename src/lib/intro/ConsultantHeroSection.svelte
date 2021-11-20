@@ -17,7 +17,7 @@
 		max-width: var(--main-content-width);
 
 		display: flex;
-		gap: 2em;
+		gap: 2.5em;
 		align-items: center;
 		justify-content: space-between;
 	}

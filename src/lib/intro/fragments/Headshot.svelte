@@ -3,7 +3,12 @@
 </script>
 
 <div>
-	<img src={consultant.headshot} alt="consultant {consultant.shortName}" />
+	<img
+		src={consultant.headshot}
+		alt="consultant {consultant.shortName}"
+		width="390px"
+		height="390px"
+	/>
 </div>
 
 <style>
@@ -11,15 +16,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: clamp(180px, 30vw, 390px);
-		width: clamp(180px, 30vw, 390px);
-		min-width: 35%;
 		position: relative;
+
+		width: clamp(180px, 70%, 390px);
 	}
 	img {
-		width: 100%;
-		object-fit: contain;
 		border-radius: 9999px;
+
+		width: 100%;
+		height: min-content;
 
 		display: flex;
 		justify-content: center;
@@ -52,7 +57,7 @@
 
 	@media (max-width: 600px) {
 		img {
-			border-radius: 0;
+			border-radius: 4px;
 		}
 		div::after,
 		div::before {
