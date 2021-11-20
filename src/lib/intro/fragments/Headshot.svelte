@@ -8,13 +8,22 @@
 
 <style>
 	div {
-		width: clamp(180px, 40%, 384px);
-
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: clamp(180px, 30vw, 390px);
+		width: clamp(180px, 30vw, 390px);
+		min-width: 35%;
 		position: relative;
 	}
 	img {
 		width: 100%;
+		object-fit: contain;
 		border-radius: 9999px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	div::after,
