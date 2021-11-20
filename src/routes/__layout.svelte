@@ -2,7 +2,7 @@
 	import '../default.css';
 	import '../config.css';
 	import Nicode from '$lib/logo/Nicode.svelte';
-	import Layer0 from '$lib/Layer0.svelte';
+	import Layer0 from '$lib/layer0/Layer0.svelte';
 </script>
 
 <svelte:head>
