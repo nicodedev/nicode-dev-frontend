@@ -18,7 +18,7 @@
 	ul {
 		display: flex;
 		flex-direction: column;
-		gap: 4em;
+		gap: 6em;
 
 		counter-reset: projex;
 	}

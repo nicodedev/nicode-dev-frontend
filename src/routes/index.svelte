@@ -33,6 +33,6 @@
 	article {
 		display: flex;
 		flex-direction: column;
-		gap: 6em;
+		gap: 8em;
 	}
 </style>

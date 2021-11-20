@@ -40,7 +40,7 @@
 		section h2:hover > a,
 		section h2:focus-within > a,
 		section:target h2 > a {
-			transition: opacity 0.05s ease-in-out;
+			transition: opacity 0.05s;
 			opacity: 1;
 		}
 	}

@@ -8,17 +8,10 @@
 
 	/* more contrast */
 	--color-primary: #fceefc;
-	--color-secondary: #1b1c26;
+	--color-secondary: #0a172f;
 	--color-accent: #ff4d44;
 	--color-accent-cta: #6eff9f;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-	* {
-		animation-duration: 0s !important;
-		transition-duration: 0s !important;
-	}
 }
