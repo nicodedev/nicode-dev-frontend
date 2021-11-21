@@ -1,14 +1,14 @@
 <script lang="ts">
+	import { browser } from '$app/env';
 	import { Spring, spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 
 	let scrollY: number;
-	let timer: ReturnType<typeof setTimeout>;
-
 	let actual: number = 0;
+	let timer: ReturnType<typeof setTimeout>;
 	const progress: Spring<number> = spring(0, {
-		damping: 0.1,
-		stiffness: 0.05,
+		damping: 0.08,
+		stiffness: 0.008,
 		precision: 0.05
 	});
 
@@ -38,7 +38,6 @@
 	});
 </script>
 
-<!-- scrollY -->
 <div class="bar-progress" aria-hidden="true" style="--p:{$progress}vh">
 	{`${Math.round(actual)}`.padStart(3, '0')}
 </div>
@@ -51,12 +50,11 @@
 		box-sizing: border-box;
 		user-select: none;
 		z-index: 10;
-		left: 0;
+		right: 0;
 
 		color: var(--color-accent);
 
-		opacity: 0.35;
-
+		/* use transforms instead? */
 		top: clamp(0.25em, var(--p), 100vh - 2em);
 	}
 
