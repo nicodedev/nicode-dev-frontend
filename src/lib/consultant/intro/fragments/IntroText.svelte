@@ -11,21 +11,25 @@
 
 	<address>
 		{#if email}
-			<a href="mailto:{email}" aria-label="email">
+			<a title="email" href="mailto:{email}" aria-label="email address">
 				<span>E</span>
 				<span>{email}</span>
 			</a>
 		{/if}
 
 		{#if linkedin}
-			<a href={'https://www.linkedin.com/in/' + linkedin} aria-label="linked in profile">
+			<a
+				title="linkedin"
+				href={'https://www.linkedin.com/in/' + linkedin}
+				aria-label="linked in profile"
+			>
 				<span>L</span>
 				<span>{linkedin}</span>
 			</a>
 		{/if}
 
 		{#if mobile}
-			<a href="tel:{mobile}" aria-label="mobile phone">
+			<a title="mobile" href="tel:{mobile}" aria-label="mobile phone">
 				<span>M</span>
 				<span>{mobile}</span>
 			</a>
