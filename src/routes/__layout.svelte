@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '@fontsource/roboto-mono/400.css';
 	import '../default.css';
 	import '../config.css';
 	import Nicode from '$lib/logo/Nicode.svelte';

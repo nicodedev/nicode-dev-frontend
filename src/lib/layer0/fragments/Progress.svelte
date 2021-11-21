@@ -1,46 +1,47 @@
 <script lang="ts">
-	import { tweened } from 'svelte/motion';
-	import { quadOut } from 'svelte/easing';
+	import { Spring, spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 
-	let scrollY, timer;
+	let scrollY: number;
+	let timer: ReturnType<typeof setTimeout>;
 
-	let actual = null;
-	const progress = tweened(0, {
-		duration: 800,
-		easing: quadOut
+	let actual: number = 0;
+	const progress: Spring<number> = spring(0, {
+		damping: 0.1,
+		stiffness: 0.05,
+		precision: 0.05
 	});
 
-	const getProgress = () => {
-		const p =
-			scrollY / (document.documentElement.scrollHeight - document.documentElement.offsetHeight);
+	const getProgress = (): number => {
+		const pageHeight =
+			document.documentElement.scrollHeight - document.documentElement.offsetHeight;
+		if (pageHeight === 0) return 0;
+
+		const p = scrollY / pageHeight;
+
 		return p * 100;
 	};
 
-	const handleScroll = () => {
-		actual = getProgress();
-
+	const handleScroll = (): void => {
 		clearTimeout(timer);
-
+		actual = getProgress();
 		timer = setTimeout(() => {
 			progress.set(actual);
-		}, 110);
+		}, 70);
 	};
 
 	onMount(() => {
 		actual = getProgress();
-		progress.set(actual, { duration: 0 });
+		progress.set(actual, { hard: true });
 
 		return () => clearTimeout(timer);
 	});
 </script>
 
 <!-- scrollY -->
-{#if actual !== null}
-	<div class="bar-progress" aria-hidden="true" style="--p:{$progress}vh">
-		L{`${5 - Math.round($progress / 10)}`.padStart(2, '0')}
-	</div>
-{/if}
+<div class="bar-progress" aria-hidden="true" style="--p:{$progress}vh">
+	{`${Math.round(actual)}`.padStart(3, '0')}
+</div>
 
 <svelte:window bind:scrollY on:scroll={handleScroll} />
 
@@ -54,7 +55,7 @@
 
 		color: var(--color-accent);
 
-		opacity: 0.4;
+		opacity: 0.35;
 
 		top: clamp(0.25em, var(--p), 100vh - 2em);
 	}
