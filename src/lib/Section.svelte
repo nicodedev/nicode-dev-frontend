@@ -1,11 +1,12 @@
 <script lang="ts">
 	export let title;
+	export let hideTitle = false;
 
-	$: id = encodeURIComponent(title.toLowerCase().replace(/\s/g, '-'));
+	const id = encodeURIComponent(title.toLowerCase().replace(/\s/g, '-'));
 </script>
 
 <section {id}>
-	{#if title}
+	{#if !hideTitle}
 		<h2>
 			<a href="#{id}">#</a>
 			{title}

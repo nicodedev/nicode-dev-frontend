@@ -1,9 +1,7 @@
 <script lang="ts">
-	import Consultant from '$lib/consultant/Consultant.svelte';
-	import { consultants } from '$lib/content';
-
-	const nicolai: ConsultantType = consultants.find((c) => c.shortName === 'Nicolai');
-	const hans: ConsultantType = consultants.find((c) => c.shortName === 'Hans');
+	let hmm = 0;
 </script>
 
-<Consultant consultant={hans} />
+<span>todo .. front page</span>
+<a href="nicolai">Nicolai</a>
+<a href="hans">Hans</a>
