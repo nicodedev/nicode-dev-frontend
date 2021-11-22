@@ -40,7 +40,7 @@
 		position: absolute;
 		content: '0' counter(projex);
 		right: 1em;
-		top: -0.735em;
+		top: -0.6em;
 		font-size: 2em;
 		text-align: right;
 		color: var(--color-accent);
