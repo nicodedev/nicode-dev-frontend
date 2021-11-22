@@ -1,3 +1,6 @@
-<span>todo .. front page</span>
-<a sveltekit:prefetch href="nicolai">Nicolai</a>
-<a sveltekit:prefetch href="hans">Hans</a>
+<script lang="ts">
+	import { consultants } from '$lib/db';
+	import ConsultantPreview from '$lib/consultant/ConsultantsPreview.svelte';
+</script>
+
+<ConsultantPreview {consultants} />

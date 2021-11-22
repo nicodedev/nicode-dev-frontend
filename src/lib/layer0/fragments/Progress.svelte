@@ -54,13 +54,18 @@
 
 		color: var(--color-accent);
 
+		padding: 8px 0;
+
 		/* use transforms instead? */
-		top: clamp(0.25em, var(--p), 100vh - 2em);
+		top: clamp(0em, var(--p), 100vh - 2em);
+
+		font-size: 0.8em;
 	}
 
 	@media (min-width: 1100px) {
 		.bar-progress {
-			padding: 0.25em 0.5em;
+			padding: 8px;
+			font-size: 1em;
 		}
 	}
 </style>
