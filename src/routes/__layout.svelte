@@ -1,5 +1,6 @@
 <script lang="ts">
-	import '@fontsource/overpass-mono';
+	import '@fontsource/overpass-mono/400.css';
+	import '@fontsource/overpass-mono/700.css';
 	import '../default.css';
 	import '../config.css';
 	import Nicode from '$lib/logo/Nicode.svelte';

@@ -6,8 +6,8 @@
 	<img
 		src={consultant.headshot}
 		alt="consultant {consultant.shortName}"
-		width="390px"
-		height="390px"
+		width="500px"
+		height="500px"
 	/>
 </div>
 

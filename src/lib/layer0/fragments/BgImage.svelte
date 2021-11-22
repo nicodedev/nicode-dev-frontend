@@ -17,6 +17,6 @@
 		background-position: center;
 		background-attachment: fixed;
 
-		opacity: 0.05;
+		opacity: 0.07;
 	}
 </style>

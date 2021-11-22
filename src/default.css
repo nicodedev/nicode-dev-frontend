@@ -43,7 +43,6 @@ body {
 	font-family: 'Overpass Mono', monospace;
 	font-size: 18px;
 	font-size: clamp(12px, 2vw, 20px);
-	font-weight: 400;
 
 	/* reset box sizing on body */
 	box-sizing: border-box;
@@ -63,7 +62,7 @@ body > div#svelte {
 	/* text-rendering: optimizeSpeed; */
 }
 *::selection {
-	background: var(--color-accent);
+	background: var(--color-accent-cta);
 	color: var(--color-secondary);
 }
 
@@ -89,7 +88,6 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 400;
 	margin: 0;
 }
 h1 {
