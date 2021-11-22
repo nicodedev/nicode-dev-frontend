@@ -16,4 +16,8 @@
 	export let consultant;
 </script>
 
+<svelte:head>
+	<title>nicode - {consultant.shortName}</title>
+</svelte:head>
+
 <ConsultantView {consultant} />

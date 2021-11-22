@@ -7,10 +7,6 @@
 	import Layer0 from '$lib/layer0/Layer0.svelte';
 </script>
 
-<svelte:head>
-	<title>Nicode</title>
-</svelte:head>
-
 <header>
 	<Nicode />
 </header>

@@ -3,4 +3,8 @@
 	import ConsultantPreview from '$lib/consultant/ConsultantsPreview.svelte';
 </script>
 
+<svelte:head>
+	<title>nicode</title>
+</svelte:head>
+
 <ConsultantPreview {consultants} />
