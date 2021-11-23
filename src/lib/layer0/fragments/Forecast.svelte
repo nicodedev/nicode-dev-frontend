@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { dev } from '$app/env';
+	import { forecast, locations } from '$lib/apiMet';
 	import { onMount } from 'svelte';
 
 	const getWeather = async () => {
@@ -7,13 +8,10 @@
 			return Math.random() * 30;
 		}
 
-		const res = await fetch(
-			'https://api.met.no/weatherapi/locationforecast/2.0/compact?altitude=5&lat=60.397076&lon=5.324383'
-		);
-		const f = await res.json();
-		const t = f.properties.timeseries[0].data.instant.details.air_temperature;
+		const res = await forecast(locations.bergen);
+		const temp = res.properties.timeseries[0].data.instant.details.air_temperature;
 
-		return t;
+		return temp;
 	};
 
 	let promise = getWeather();
