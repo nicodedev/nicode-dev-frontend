@@ -1,4 +1,4 @@
-export const consultants = [
+export const consultants: ConsultantType[] = [
 	{
 		shortName: 'Nicolai',
 		headshot: 'hs/nicolai.webp',
