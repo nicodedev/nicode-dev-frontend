@@ -7,11 +7,15 @@
 	--color-accent-cta: #32d97b; */
 
 	/* more contrast */
-	--color-primary: #fceefc;
-	--color-secondary: #0a172f;
+	--color-primary: #dddde6;
+	--color-secondary: #051117;
 	--color-accent: #ff4d44;
 	--color-accent-cta: #6eff9f;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;
+
+	/* reference values */
+	--b-radius: 8px;
+	--b-thickness: 2px;
 }
