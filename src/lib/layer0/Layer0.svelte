@@ -2,8 +2,14 @@
 	import BgImage from './fragments/BgImage.svelte';
 	import Progress from './fragments/Progress.svelte';
 	import Forecast from './fragments/Forecast.svelte';
+
+	export let background = false;
+	export let progress = false;
+	export let forecast = false;
+
+	$: show = [background ? BgImage : null, progress ? Progress : null, forecast ? Forecast : null];
 </script>
 
-<BgImage />
-<Progress />
-<Forecast />
+{#each show as component}
+	<svelte:component this={component} />
+{/each}

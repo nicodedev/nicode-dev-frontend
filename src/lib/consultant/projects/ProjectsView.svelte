@@ -39,9 +39,9 @@
 	li::after {
 		position: absolute;
 		content: '0' counter(projex);
-		right: 1em;
-		top: -0.57em;
 		font-size: 2em;
+		right: 0.95em;
+		top: calc(-0.58em + var(--b-thickness) / 2);
 		text-align: right;
 		color: var(--color-accent);
 	}
@@ -50,7 +50,7 @@
 	}
 
 	li::before {
-		border: 2px solid var(--color-accent);
+		border: var(--b-thickness) solid var(--color-accent);
 		position: absolute;
 		content: '';
 		z-index: -1;
@@ -58,7 +58,7 @@
 		top: 0;
 		width: 100%;
 		height: 100%;
-		border-radius: 4px;
+		border-radius: var(--b-radius);
 
 		clip-path: polygon(
 			-2% -2%,

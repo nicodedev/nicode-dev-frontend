@@ -12,7 +12,8 @@
 </script>
 
 <script lang="ts">
-	import ConsultantView from '$lib/consultant/ConsultantView.svelte';
+	import ContentArticle from '$lib/wrappers/ContentArticle.svelte';
+	import ConsultantSection from '$lib/consultant/ConsultantSection.svelte';
 	export let consultant;
 </script>
 
@@ -20,4 +21,6 @@
 	<title>nicode - {consultant.shortName}</title>
 </svelte:head>
 
-<ConsultantView {consultant} />
+<ContentArticle>
+	<ConsultantSection {consultant} />
+</ContentArticle>

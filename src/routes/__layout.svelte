@@ -19,7 +19,7 @@
 	<p>Created by <strike>Nicolai</strike> Hans in <strike>Elm</strike> Svelte</p>
 </footer>
 
-<Layer0 />
+<Layer0 background />
 
 <style>
 	header,
@@ -28,13 +28,20 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 2em;
+	}
+
+	header {
+		margin-top: 3em;
 	}
 	main {
 		flex: auto;
-		margin: 100px 0;
 		position: relative;
 		z-index: 10;
+
+		margin: 3em 0;
+	}
+	footer {
+		margin-bottom: 2em;
 	}
 
 	footer p {

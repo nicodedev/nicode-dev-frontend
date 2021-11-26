@@ -12,13 +12,12 @@
 
 <style>
 	a {
-		border-radius: 4px;
-		border: 2px solid var(--color-primary);
+		border-radius: var(--b-radius);
 		background-color: var(--color-secondary);
 		text-decoration: none;
 		padding: 20px;
 
-		border: 2px solid var(--color-accent-cta);
+		border: var(--b-thickness) solid var(--color-accent-cta);
 	}
 
 	section {
