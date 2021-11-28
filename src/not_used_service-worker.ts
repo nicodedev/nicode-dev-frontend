@@ -2,6 +2,10 @@
 
 import { build, files, timestamp } from '$service-worker';
 
+console.log(`build`, build);
+console.log(`files`, files);
+console.log(`timestamp`, timestamp);
+
 var CACHE_NAME = `nicode-${timestamp}`;
 var urlsToCache = [...build];
 
@@ -15,6 +19,7 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+	console.log('Service Worker: fetch event');
 	event.respondWith(
 		caches.match(event.request).then((response) => {
 			// Cache hit - return response
