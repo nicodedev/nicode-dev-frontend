@@ -7,7 +7,11 @@
 	export let progress = false;
 	export let forecast = false;
 
-	$: show = [background ? BgImage : null, progress ? Progress : null, forecast ? Forecast : null];
+	$: show = [
+		[background, BgImage],
+		[progress, Progress],
+		[forecast, Forecast]
+	].map((element) => (element[0] ? element[1] : null));
 </script>
 
 {#each show as component}
