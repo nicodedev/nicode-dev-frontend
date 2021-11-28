@@ -11,17 +11,52 @@
 	/>
 </div>
 
+<svg width="0" height="0">
+	<filter id="f">
+		<feColorMatrix
+			type="matrix"
+			result="r_"
+			values="4 0 0 0 0
+              0 0 0 0 0 
+              0 0 0 0 0 
+              0 0 0 1 0"
+		/>
+		<feOffset in="r_" dx="1" dy="1" result="red" />
+		<feColorMatrix
+			type="matrix"
+			in="SourceGraphic"
+			result="b_"
+			values="1 0 0 0 0
+              0 3 0 0 0 
+              0 0 2 0 0 
+              0 0 0 1 0"
+		/>
+		<feOffset in="b_" dx="-1" dy="-0" result="blue" />
+		<feBlend mode="screen" in="red" in2="blue" result="res_" />
+		<feFlood height="1" width="1" />
+		<feComposite width="2" height="2" />
+		<feTile result="a_" />
+		<feComposite in="res_" in2="a_" operator="in" />
+		<feMorphology operator="dilate" radius="0.3" />
+	</filter>
+</svg>
+
 <style>
+	@keyframes fadeInAlt {
+		to {
+			color: var(--color-content);
+		}
+	}
 	div {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: relative;
 
-		width: clamp(180px, 70%, 390px);
+		width: clamp(180px, 70%, 310px);
 	}
 	img {
-		border-radius: 9999px;
+		border-radius: var(--b-radius);
 
 		width: 100%;
 		object-fit: contain;
@@ -34,19 +69,15 @@
 		/* hack to hide alt text if load fail (aviid layout shift uglyness) */
 		color: rgba(0, 0, 0, 0);
 		animation: fadeInAlt 0.2s 0.3s ease-in-out forwards;
-	}
-	@keyframes fadeInAlt {
-		to {
-			color: var(--color-primary);
-		}
+		filter: url(#f);
 	}
 
-	div::after,
+	/* div::after,
 	div::before {
 		content: '';
 		position: absolute;
 
-		border: var(--b-thickness) solid var(--color-accent-cta);
+		border: var(--b-thickness) solid var(--color-interact);
 		border-radius: var(--b-radius);
 
 		top: 0;
@@ -63,36 +94,5 @@
 		transform: rotate(0);
 
 		pointer-events: none;
-	}
-
-	@media (max-width: 600px) {
-		img {
-			border-radius: var(--b-radius);
-		}
-		div::after,
-		div::before {
-			width: 100%;
-			height: 100%;
-			transform: rotate(10deg);
-		}
-	}
-
-	@media (min-width: 960px) {
-		div:hover::after,
-		div:hover::before {
-			transition: transform 0.3s 0.8s ease-out, width 0.5s ease-out, height 0.5s ease-out;
-			transform: rotate(-45deg);
-		}
-	}
-
-	div::after {
-		border-right: 0;
-		border-bottom: 0;
-		z-index: -2;
-	}
-	div::before {
-		z-index: 2;
-		border-top: 0;
-		border-left: 0;
-	}
+	} */
 </style>
