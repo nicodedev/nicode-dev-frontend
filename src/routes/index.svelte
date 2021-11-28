@@ -8,6 +8,6 @@
 	<title>nicode</title>
 </svelte:head>
 
-<ContentArticle background>
+<ContentArticle>
 	<ConsultantPreview {consultants} />
 </ContentArticle>

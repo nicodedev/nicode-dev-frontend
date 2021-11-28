@@ -24,6 +24,9 @@
 <Tags {tags} />
 
 <style>
+	h3 {
+		margin-top: 0.25em;
+	}
 	p {
 		margin: 1em 0;
 	}

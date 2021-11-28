@@ -6,7 +6,7 @@
 
 <div>
 	<p>
-		{preamble}
+		Hi i am <span class="name">{consultant.shortName}</span>, {preamble}
 	</p>
 
 	<address>
@@ -56,8 +56,8 @@
 	}
 	address a:hover span:first-of-type {
 		text-decoration: none;
-		background-color: var(--color-accent-cta);
-		color: var(--color-secondary);
+		background-color: var(--color-interact);
+		color: var(--color-background);
 	}
 
 	div {
@@ -65,7 +65,7 @@
 		flex-direction: column;
 		gap: 1em;
 		font-size: 1.4em;
-		max-width: 480px;
+		max-width: 500px;
 	}
 	@media (max-width: 600px) {
 		div {

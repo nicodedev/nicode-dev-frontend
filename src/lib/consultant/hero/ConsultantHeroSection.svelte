@@ -20,7 +20,7 @@
 		display: flex;
 		gap: 2.5em;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-evenly;
 	}
 
 	@media (max-width: 480px) {

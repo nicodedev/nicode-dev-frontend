@@ -1,16 +1,8 @@
 :root {
-	/* colors --color- <group> - <variation> */
-
-	/* --color-primary: #fceefc;
-	--color-secondary: #282a36;
-	--color-accent: #f25169;
-	--color-accent-cta: #32d97b; */
-
-	/* more contrast */
-	--color-primary: #dddde6;
-	--color-secondary: #051117;
-	--color-accent: #ff4d44;
-	--color-accent-cta: #6eff9f;
+	--color-content: #dddde6;
+	--color-background: #051117;
+	--color-accent: #ff341f;
+	--color-interact: #6eff9f;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;

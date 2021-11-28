@@ -23,5 +23,6 @@
 	div {
 		display: flex;
 		gap: 1em;
+		font-size: 0.9em;
 	}
 </style>

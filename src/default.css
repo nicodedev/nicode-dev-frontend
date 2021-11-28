@@ -8,7 +8,7 @@ body {
 	/* prewent layout shift (plz) */
 	scrollbar-gutter: stable;
 	/* firefox only  :( */
-	scrollbar-color: var(--color-accent-cta) var(--color-secondary);
+	scrollbar-color: var(--color-interact) var(--color-background);
 	scrollbar-width: thin;
 }
 
@@ -25,19 +25,19 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track-piece {
-	background-color: var(--color-secondary);
+	background-color: var(--color-background);
 }
 
 body::-webkit-scrollbar-thumb:vertical {
 	height: 30px;
-	background-color: var(--color-accent-cta);
+	background-color: var(--color-interact);
 }
 
 body {
 	min-width: 256px;
 	/* set default color  */
-	background-color: var(--color-secondary);
-	color: var(--color-primary);
+	background-color: var(--color-background);
+	color: var(--color-content);
 
 	/* set default font  */
 	font-family: 'Overpass Mono', monospace;
@@ -62,12 +62,12 @@ body > div#svelte {
 	/* text-rendering: optimizeSpeed; */
 }
 *::selection {
-	background: var(--color-accent-cta);
-	color: var(--color-secondary);
+	background: var(--color-interact);
+	color: var(--color-background);
 }
 
 a {
-	color: var(--color-accent-cta);
+	color: var(--color-interact);
 	text-decoration: none;
 }
 

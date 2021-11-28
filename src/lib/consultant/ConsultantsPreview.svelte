@@ -13,11 +13,11 @@
 <style>
 	a {
 		border-radius: var(--b-radius);
-		background-color: var(--color-secondary);
+		background-color: var(--color-background);
 		text-decoration: none;
 		padding: 20px;
 
-		border: var(--b-thickness) solid var(--color-accent-cta);
+		border: var(--b-thickness) solid var(--color-interact);
 	}
 
 	section {
