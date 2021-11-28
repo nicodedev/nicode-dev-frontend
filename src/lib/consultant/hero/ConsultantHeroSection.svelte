@@ -7,7 +7,7 @@
 </script>
 
 {#if consultant}
-	<Section hideTitle title={consultant.shortName}>
+	<Section hideTitle title={consultant.name}>
 		<div>
 			<Headshot {consultant} />
 			<IntroText {consultant} />

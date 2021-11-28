@@ -4,7 +4,7 @@
 	export const load = async ({ page }) => {
 		// look up the consultant, ignore case
 		const consultant = consultants.find(
-			(c) => c.shortName.toLowerCase() === page.params.shortName.toLowerCase()
+			(c) => c.name.toLowerCase() === page.params.name.toLowerCase()
 		);
 
 		return { props: { consultant }, status: consultant ? 200 : 404 };
@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>nicode - {consultant.shortName}</title>
+	<title>nicode - {consultant.name}</title>
 </svelte:head>
 
 <ContentArticle>

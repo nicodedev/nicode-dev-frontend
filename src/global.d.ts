@@ -1,7 +1,7 @@
 /// <reference types="@sveltejs/kit" />
 
 type ConsultantType = {
-	shortName: string;
+	name: string;
 	headshot: string;
 	intro: Intro;
 	availability: string;

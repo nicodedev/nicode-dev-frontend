@@ -4,8 +4,8 @@
 
 <section>
 	{#each consultants as consultant}
-		<a sveltekit:prefetch href={consultant.shortName}>
-			<span>{consultant.shortName}</span>
+		<a sveltekit:prefetch href={consultant.name}>
+			<span>{consultant.name}</span>
 		</a>
 	{/each}
 </section>

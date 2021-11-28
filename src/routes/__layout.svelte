@@ -37,7 +37,6 @@
 		flex: auto;
 		position: relative;
 		z-index: 10;
-
 		margin: 3em 0;
 	}
 	footer {
@@ -45,14 +44,11 @@
 	}
 
 	footer p {
+		color: var(--color-accent);
 		max-width: var(--main-content-width);
 		width: 100%;
-		opacity: 0.6;
+		opacity: 0.5;
 		transition: opacity 1.1s 2s;
 		font-size: 0.65em;
-	}
-	footer:hover p {
-		transition: opacity 0.2s;
-		opacity: 1;
 	}
 </style>

@@ -1,9 +1,9 @@
 export const consultants: ConsultantType[] = [
 	{
-		shortName: 'Nicolai',
+		name: 'Nicolai',
 		headshot: 'hs/nicolai.webp',
 		intro: {
-			preamble: 'Hi! I’m Nicolai, a freelance developer with a passion for people and technology. ',
+			preamble: 'a developer with a passion for people and technology. ',
 			email: 'nicolai@gjellestad.net',
 			mobile: '+4799428603',
 			linkedin: 'ngjellestad'
@@ -40,10 +40,10 @@ export const consultants: ConsultantType[] = [
 		]
 	},
 	{
-		shortName: 'Hans',
+		name: 'Hans',
 		headshot: 'hs/hans.webp',
 		intro: {
-			preamble: 'Hi! I’m Hans, a developer with a passion for making great user experiences.',
+			preamble: 'a developer with a passion for making great user experiences.',
 			email: 'box@melaa.net',
 			mobile: '+4748149606',
 			linkedin: ''

@@ -3,12 +3,7 @@
 </script>
 
 <div>
-	<img
-		src={consultant.headshot}
-		alt="consultant {consultant.shortName}"
-		width="500px"
-		height="500px"
-	/>
+	<img src={consultant.headshot} alt="consultant {consultant.name}" width="500px" height="500px" />
 </div>
 
 <svg width="0" height="0">
