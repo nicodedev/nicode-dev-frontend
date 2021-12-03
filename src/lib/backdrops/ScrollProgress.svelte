@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/env';
 	import { Spring, spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 
@@ -7,8 +6,8 @@
 	let actual: number = 0;
 	let timer: ReturnType<typeof setTimeout>;
 	const progress: Spring<number> = spring(0, {
-		damping: 0.08,
-		stiffness: 0.008,
+		damping: 0.065,
+		stiffness: 0.01,
 		precision: 0.05
 	});
 
@@ -27,7 +26,7 @@
 		actual = getProgress();
 		timer = setTimeout(() => {
 			progress.set(actual);
-		}, 70);
+		}, 60);
 	};
 
 	onMount(() => {

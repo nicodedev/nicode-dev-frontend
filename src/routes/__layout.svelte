@@ -1,10 +1,11 @@
 <script lang="ts">
 	import '@fontsource/overpass-mono/400.css';
 	import '@fontsource/overpass-mono/700.css';
+	import '@fontsource/jost';
 	import '../default.css';
 	import '../config.css';
-	import Nicode from '$lib/logo/Nicode.svelte';
-	import Layer0 from '$lib/layer0/Layer0.svelte';
+	import Nicode from '$lib/Nicode.svelte';
+	import BackgroundImage from '$lib/backdrops/BackgroundImage.svelte';
 </script>
 
 <header>
@@ -16,10 +17,10 @@
 </main>
 
 <footer>
-	<p>Created by <strike>Nicolai</strike> Hans in <strike>Elm</strike> Svelte</p>
+	<!-- <p>Created by Hans in Svelte, <time datetime="2021-02">Dec 2021</time></p> -->
 </footer>
 
-<Layer0 background />
+<BackgroundImage />
 
 <style>
 	header,
@@ -31,7 +32,7 @@
 	}
 
 	header {
-		margin-top: 3em;
+		margin: 3em 0 0;
 	}
 	main {
 		flex: auto;
@@ -40,15 +41,26 @@
 		margin: 3em 0;
 	}
 	footer {
-		margin-bottom: 2em;
+		margin-top: 5em;
+		padding: 0.5em 2em;
+
+		color: var(--color-accent);
 	}
 
-	footer p {
-		color: var(--color-accent);
+	/* footer > p {
 		max-width: var(--main-content-width);
 		width: 100%;
-		opacity: 0.5;
-		transition: opacity 1.1s 2s;
+		transition: opacity 1.1s 0.2s;
 		font-size: 0.65em;
 	}
+	footer:hover > p {
+		opacity: 1;
+	}
+
+	@media (max-width: 900px) {
+		footer > p {
+			opacity: 0.5;
+			font-size: 0.8em;
+		}
+	} */
 </style>

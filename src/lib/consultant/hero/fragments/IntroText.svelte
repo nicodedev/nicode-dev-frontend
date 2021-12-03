@@ -64,7 +64,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
-		font-size: 1.4em;
+		font-size: 1.5em;
 		max-width: 500px;
 	}
 	@media (max-width: 600px) {

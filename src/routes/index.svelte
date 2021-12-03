@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { consultants } from '$lib/db';
 	import ContentArticle from '$lib/wrappers/ContentArticle.svelte';
+	import { prefetchRoutes } from '$app/navigation';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		prefetchRoutes(consultants.map((c) => c.name));
+	});
 </script>
 
 <svelte:head>

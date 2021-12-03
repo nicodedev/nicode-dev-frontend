@@ -28,6 +28,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/jost": "^4.5.1",
 		"@fontsource/overpass-mono": "^4.5.1",
 		"@lukeed/uuid": "^2.0.0",
 		"cookie": "^0.4.1"

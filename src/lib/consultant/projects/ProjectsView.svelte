@@ -40,8 +40,9 @@
 		position: absolute;
 		content: '0' counter(projex);
 		font-size: 2em;
-		right: 0.95em;
-		top: calc(-0.58em + var(--b-thickness) / 2);
+		font-weight: 200;
+		right: 1em;
+		top: calc(-0.85em + var(--b-thickness) / 2);
 		text-align: right;
 		color: var(--color-accent);
 	}

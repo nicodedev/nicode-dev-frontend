@@ -1,7 +1,7 @@
 :root {
 	--color-content: #dddde6;
 	--color-background: #051117;
-	--color-accent: #ff341f;
+	--color-accent: #ac3333;
 	--color-interact: #6eff9f;
 
 	/* set a size basis for main content */
@@ -9,5 +9,5 @@
 
 	/* reference values */
 	--b-radius: 8px;
-	--b-thickness: 2px;
+	--b-thickness: 1px;
 }
