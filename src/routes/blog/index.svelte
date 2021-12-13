@@ -10,6 +10,10 @@
 	export let posts: BlogPostType[];
 </script>
 
+<svelte:head>
+	<title>nicode - blog</title>
+</svelte:head>
+
 <article class="article fadein">
 	<h1>Blog</h1>
 	<ul>
@@ -38,12 +42,5 @@
 
 	li a {
 		position: relative;
-	}
-
-	li a:not(:visited)::before {
-		content: '';
-		width: 0.1em;
-		height: 0.1em;
-		background-color: var(--color-accent);
 	}
 </style>

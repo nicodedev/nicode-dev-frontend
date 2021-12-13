@@ -14,4 +14,8 @@
 	export let post: BlogPostType;
 </script>
 
+<svelte:head>
+	<title>nicode - blog | {post.title}</title>
+</svelte:head>
+
 <BlogPost {post} />
