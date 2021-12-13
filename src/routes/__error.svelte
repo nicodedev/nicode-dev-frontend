@@ -28,8 +28,9 @@
 
 <style>
 	h1 {
-		color: var(--color-accent);
+		color: var(--color-content);
 		font-size: 4em;
+		opacity: 0.75;
 	}
 	h1,
 	h2,

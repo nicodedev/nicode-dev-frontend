@@ -1,8 +1,7 @@
 :root {
-	--color-content: #465a7b;
-	--color-background: #e4efff;
-	--color-interactive: #069574;
-	--color-accent: #009ddb;
+	--color-content: #313c46;
+	--color-background: #ecf7ff;
+	--color-interactive: #009166;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;
@@ -16,10 +15,9 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-content: #c9d9ee;
-		--color-background: #151f28;
-		--color-interactive: #00c396;
-		--color-accent: #45a3d0;
+		--color-content: #ecf7ff;
+		--color-background: #252e37;
+		--color-interactive: #00ffb3;
 	}
 }
 

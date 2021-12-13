@@ -52,8 +52,7 @@
 	footer > p {
 		max-width: var(--site-width);
 		width: 100%;
-		font-size: 0.5em;
-
-		color: var(--color-accent);
+		font-size: 0.7em;
+		opacity: 0.75;
 	}
 </style>

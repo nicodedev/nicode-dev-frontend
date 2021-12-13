@@ -18,7 +18,6 @@
 
 		width: clamp(180px, 70%, 380px);
 
-		/* border: 3px solid var(--color-accent); */
 		border-radius: 9999px;
 		overflow: hidden;
 
@@ -27,7 +26,7 @@
 		background-position: center 25%;
 		background-repeat: no-repeat;
 
-		box-shadow: 0 0 0 2px var(--color-accent), 0 0 25px -15px var(--color-accent);
+		box-shadow: 0 0 8px -4px var(--color-content);
 	}
 
 	img {

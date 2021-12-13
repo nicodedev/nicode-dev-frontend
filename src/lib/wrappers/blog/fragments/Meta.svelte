@@ -44,8 +44,8 @@
 		justify-content: space-between;
 		gap: 0 1em;
 
-		font-size: 0.6em;
-		color: var(--color-accent);
+		font-size: 0.75em;
+		opacity: 0.75;
 	}
 	.meta ul {
 		display: flex;
