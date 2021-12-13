@@ -11,10 +11,10 @@
 
 <style>
 	div {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		position: relative;
 
 		width: clamp(180px, 70%, 380px);
 
@@ -26,7 +26,18 @@
 		background-position: center 25%;
 		background-repeat: no-repeat;
 
-		box-shadow: 0 0 8px -4px var(--color-content);
+		box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.3);
+	}
+
+	div::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		border-radius: 9999px;
 	}
 
 	img {

@@ -1,6 +1,6 @@
 :root {
-	--color-content: #313c46;
-	--color-background: #ecf7ff;
+	--color-content: #415364;
+	--color-background: #d9e4ec;
 	--color-interactive: #009166;
 
 	/* set a size basis for main content */
@@ -15,7 +15,7 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-content: #ecf7ff;
+		--color-content: #d9e4ec;
 		--color-background: #252e37;
 		--color-interactive: #00ffb3;
 	}
