@@ -1,6 +1,6 @@
 import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
-import type { Handle, HandleError, GetSession } from '@sveltejs/kit';
+import type { Handle, GetSession } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ request, resolve }) => {
 	// TODO https://github.com/sveltejs/kit/issues/1046
@@ -24,10 +24,6 @@ export const handle: Handle = async ({ request, resolve }) => {
 
 	return response;
 };
-
-// export const handleError: HandleError = async ({ error, request }) => {
-
-// };
 
 export const getSession: GetSession = async (request) => {
 	return request.locals.userid ? { userid: request.locals.userid } : {};

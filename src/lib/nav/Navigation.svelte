@@ -12,11 +12,11 @@
 			</svg>
 		</a>
 	</div>
-	<div>
+	<!-- <div>
 		<a href="/blog">
 			<span>blog</span>
 		</a>
-	</div>
+	</div> -->
 </nav>
 
 <style>
