@@ -43,18 +43,14 @@
 		gap: var(--space);
 	}
 	svg {
-		height: calc(var(--space) * 1.35);
+		height: calc(var(--space) * 1.5);
 	}
+
 	path {
 		stroke: var(--color-interactive);
 		fill: none;
 		stroke-width: 5;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-	}
-	@keyframes in-draw {
-		0% {
-			stroke-dasharray: 0;
-		}
 	}
 </style>
