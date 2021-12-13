@@ -17,7 +17,6 @@
 		position: relative;
 
 		width: clamp(180px, 70%, 380px);
-		height: 100%;
 
 		/* border: 3px solid var(--color-accent); */
 		border-radius: 9999px;
