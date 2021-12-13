@@ -2,7 +2,7 @@
 	--color-content: #465a7b;
 	--color-background: #e4efff;
 	--color-interactive: #069574;
-	--color-accent: #c2d6f2;
+	--color-accent: #009ddb;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;
@@ -19,7 +19,7 @@
 		--color-content: #c9d9ee;
 		--color-background: #151f28;
 		--color-interactive: #00c396;
-		--color-accent: #325c70;
+		--color-accent: #45a3d0;
 	}
 }
 

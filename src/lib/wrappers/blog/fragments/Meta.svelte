@@ -45,7 +45,7 @@
 		gap: 0 1em;
 
 		font-size: 0.6em;
-		opacity: 0.75;
+		color: var(--color-accent);
 	}
 	.meta ul {
 		display: flex;

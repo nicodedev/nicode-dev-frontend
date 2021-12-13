@@ -53,6 +53,7 @@
 		max-width: var(--site-width);
 		width: 100%;
 		font-size: 0.5em;
-		opacity: 0.75;
+
+		color: var(--color-accent);
 	}
 </style>
