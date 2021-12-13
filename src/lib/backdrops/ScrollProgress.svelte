@@ -51,7 +51,7 @@
 		z-index: 10;
 		right: 0;
 
-		color: var(--color-accent);
+		color: var(--color-content);
 
 		padding: 8px 0;
 

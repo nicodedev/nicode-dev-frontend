@@ -1,13 +1,28 @@
 :root {
-	--color-content: #dddde6;
-	--color-background: #051117;
-	--color-accent: #ac3333;
-	--color-interact: #6eff9f;
+	--color-content: #465a7b;
+	--color-background: #e4efff;
+	--color-interactive: #069574;
+	--color-accent: #c2d6f2;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;
+	--site-width: 2560px;
 
-	/* reference values */
-	--b-radius: 8px;
-	--b-thickness: 1px;
+	/* minimum padding space for content not supposed to touch the window edge*/
+	--box-space: 2em;
+	/* space between each section of a page */
+	--section-space: 6em;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-content: #c9d9ee;
+		--color-background: #151f28;
+		--color-interactive: #00c396;
+		--color-accent: #325c70;
+	}
+}
+
+body {
+	font-family: Archivo, sans-serif;
 }

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Section from '$lib/wrappers/Section.svelte';
 	import IntroText from './fragments/IntroText.svelte';
 	import Headshot from './fragments/Headshot.svelte';
 
@@ -7,24 +6,21 @@
 </script>
 
 {#if consultant}
-	<Section hideTitle title={consultant.name}>
-		<div>
-			<Headshot {consultant} />
-			<IntroText {consultant} />
-		</div>
-	</Section>
+	<section>
+		<Headshot {consultant} />
+		<IntroText {consultant} />
+	</section>
 {/if}
 
 <style>
-	div {
+	section {
 		display: flex;
-		gap: 2.5em;
 		align-items: center;
-		justify-content: space-evenly;
+		gap: 2em;
 	}
 
-	@media (max-width: 480px) {
-		div {
+	@media (max-width: 600px) {
+		section {
 			flex-direction: column;
 		}
 	}

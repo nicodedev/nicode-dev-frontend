@@ -18,13 +18,12 @@
 		flex-wrap: wrap;
 		align-items: center;
 
-		font-size: 0.95em;
 		gap: 0.5em;
 	}
 	ul::before,
 	ul::after {
 		font-weight: bold;
-		font-size: 1.25em;
+		font-size: 1.3em;
 	}
 	ul::after {
 		content: ']';

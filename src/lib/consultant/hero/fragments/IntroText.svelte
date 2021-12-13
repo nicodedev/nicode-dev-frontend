@@ -1,76 +1,28 @@
 <script lang="ts">
-	export let consultant: ConsultantType;
+	import Address from './Address.svelte';
 
-	$: ({ preamble, email, mobile, linkedin } = consultant.intro);
+	export let consultant: ConsultantType;
 </script>
 
 <div>
 	<p>
-		Hi i am <span class="name">{consultant.name}</span>, {preamble}
+		Hi i am <span class="name">{consultant.name}</span>, {consultant.preamble}
 	</p>
-
-	<address>
-		{#if email}
-			<a title="email" href="mailto:{email}" aria-label="email address">
-				<span>E</span>
-				<span>{email}</span>
-			</a>
-		{/if}
-
-		{#if linkedin}
-			<a
-				title="linkedin"
-				href={'https://www.linkedin.com/in/' + linkedin}
-				aria-label="linked in profile"
-			>
-				<span>L</span>
-				<span>{linkedin}</span>
-			</a>
-		{/if}
-
-		{#if mobile}
-			<a title="mobile" href="tel:{mobile}" aria-label="mobile phone">
-				<span>M</span>
-				<span>{mobile}</span>
-			</a>
-		{/if}
-	</address>
+	<Address contact={consultant.contact} />
 </div>
 
 <style>
-	address {
-		display: flex;
-		flex-flow: column;
-		gap: 0.1em;
-		font-size: 0.8em;
-		justify-content: space-between;
-	}
-	address a {
-		display: flex;
-		gap: 5px;
-		font-size: 1em;
-	}
-	address a span {
-		padding: 0.2em 0.4em;
-		border-radius: var(--b-radius);
-	}
-	address a:hover span:first-of-type {
-		text-decoration: none;
-		background-color: var(--color-interact);
-		color: var(--color-background);
-	}
-
 	div {
 		display: flex;
 		flex-direction: column;
-		gap: 1em;
+		justify-content: space-between;
+		gap: 0.5em;
 		font-size: 1.5em;
 		max-width: 500px;
 	}
 	@media (max-width: 600px) {
 		div {
 			max-width: 300px;
-			text-align: justify;
 		}
 	}
 </style>

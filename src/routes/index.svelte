@@ -1,42 +1,50 @@
-<script lang="ts">
-	import { consultants } from '$lib/db';
-	import ContentArticle from '$lib/wrappers/ContentArticle.svelte';
-	import { prefetchRoutes } from '$app/navigation';
-	import { onMount } from 'svelte';
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
+	export const load: Load = async ({ fetch }) => {
+		const res = await fetch(`index.json`);
 
-	onMount(() => {
-		prefetchRoutes(consultants.map((c) => c.name));
-	});
+		if (!res.ok) return;
+
+		const { consultants } = await res.json();
+
+		return { props: { consultants } };
+	};
+</script>
+
+<script lang="ts">
+	import HashSection from '$lib/wrappers/HashSection.svelte';
+	export let consultants;
 </script>
 
 <svelte:head>
 	<title>nicode</title>
 </svelte:head>
 
-<ContentArticle>
-	<section>
-		{#each consultants as consultant}
-			<a sveltekit:prefetch href={consultant.name}>
-				<span>{consultant.name}</span>
-			</a>
-		{/each}
-	</section>
-</ContentArticle>
+<article class="article fadein">
+	<HashSection title="Welcome to nicode!">
+		<p>We are a tiny consultancy firm focused on people as much as code.</p>
+		<div>
+			{#each consultants as consultant}
+				<a sveltekit:prefetch href={consultant.name}>
+					<span>{consultant.name}</span>
+				</a>
+			{/each}
+		</div>
+	</HashSection>
+</article>
 
 <style>
 	a {
-		border-radius: var(--b-radius);
-		background-color: var(--color-background);
+		border-radius: 6px;
 		text-decoration: none;
-		padding: 20px;
-
-		border: var(--b-thickness) solid var(--color-interact);
+		padding: 0.5em 1em;
+		border: 2px solid var(--color-interactive);
 	}
-
-	section {
+	div {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		width: 100%;
 		gap: 1em;
+		margin: 2em auto;
 	}
 </style>

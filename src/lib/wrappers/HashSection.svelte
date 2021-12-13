@@ -1,12 +1,11 @@
 <script lang="ts">
-	export let title;
-	export let hideTitle = false;
+	export let title = '';
 
-	const id = encodeURIComponent(title.toLowerCase().replace(/\s/g, '-'));
+	const id = title ? encodeURIComponent(title.toLowerCase().replace(/\s/g, '-')) : undefined;
 </script>
 
 <section {id}>
-	{#if !hideTitle}
+	{#if title.length}
 		<h2>
 			<a href="#{id}">#</a>
 			{title}
@@ -18,14 +17,17 @@
 <style>
 	section {
 		scroll-margin: 6rem 0 0 0;
-		max-width: var(--main-content-width);
 		display: flex;
 		flex-direction: column;
-		gap: 1em;
+
+		width: 100%;
+		max-width: var(--main-content-width);
 	}
 
 	section h2 {
+		font-size: 2em;
 		max-width: max-content;
+		margin-bottom: 0.5em;
 	}
 
 	@media (min-width: 1100px) {
@@ -38,9 +40,8 @@
 			transition: opacity 0.1s 0.1s ease-in-out;
 			opacity: 0;
 		}
-		section h2:hover > a,
-		section h2:focus-within > a,
-		section:target h2 > a {
+		section h2:hover a,
+		section:focus-within h2 a {
 			transition: opacity 0.05s;
 			opacity: 1;
 		}

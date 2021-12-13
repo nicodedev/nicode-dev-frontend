@@ -1,15 +1,13 @@
 <script lang="ts">
-	import '@fontsource/overpass-mono/400.css';
-	import '@fontsource/overpass-mono/700.css';
-	import '@fontsource/jost';
+	import '@fontsource/archivo';
 	import '../default.css';
 	import '../config.css';
-	import Nicode from '$lib/Nicode.svelte';
-	import BackgroundImage from '$lib/backdrops/BackgroundImage.svelte';
+
+	import Navigation from '$lib/nav/Navigation.svelte';
 </script>
 
 <header>
-	<Nicode />
+	<Navigation />
 </header>
 
 <main>
@@ -17,10 +15,8 @@
 </main>
 
 <footer>
-	<!-- <p>Created by Hans in Svelte, <time datetime="2021-02">Dec 2021</time></p> -->
+	<p>Created with love, <time datetime="2021-02">Dec 2021</time></p>
 </footer>
-
-<BackgroundImage />
 
 <style>
 	header,
@@ -29,38 +25,34 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		max-width: var(--site-width);
+		margin: 0 auto;
+		width: 100%;
+	}
+	header,
+	footer {
+		z-index: 11;
 	}
 
 	header {
-		margin: 3em 0 0;
+		padding: calc(var(--box-space) / 2) var(--box-space) 0;
 	}
 	main {
 		flex: auto;
 		position: relative;
 		z-index: 10;
-		margin: 3em 0;
 	}
 	footer {
-		margin-top: 5em;
-		padding: 0.5em 2em;
+		padding: var(--box-space) var(--box-space) calc(var(--box-space) / 2);
 
-		color: var(--color-accent);
+		color: var(--color-content);
 	}
 
-	/* footer > p {
-		max-width: var(--main-content-width);
+	footer > p {
+		max-width: var(--site-width);
 		width: 100%;
-		transition: opacity 1.1s 0.2s;
-		font-size: 0.65em;
+		font-size: 0.5em;
+		opacity: 0.75;
 	}
-	footer:hover > p {
-		opacity: 1;
-	}
-
-	@media (max-width: 900px) {
-		footer > p {
-			opacity: 0.5;
-			font-size: 0.8em;
-		}
-	} */
 </style>

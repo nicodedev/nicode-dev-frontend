@@ -8,15 +8,15 @@ body {
 	/* prewent layout shift (plz) */
 	scrollbar-gutter: stable;
 	/* firefox only  :( */
-	scrollbar-color: var(--color-interact) var(--color-background);
+	scrollbar-color: var(--color-interactive) var(--color-background);
 	scrollbar-width: thin;
 }
 
 /* scrollbar jump fix */
 @media screen and (min-width: 960px) {
 	html {
-		margin-left: calc(100vw - 100%);
-		margin-right: 0;
+		margin-right: calc(100vw - 100%);
+		margin-left: 0;
 	}
 }
 
@@ -38,23 +38,21 @@ body::-webkit-scrollbar-track-piece {
 
 body::-webkit-scrollbar-thumb:vertical {
 	height: 30px;
-	background-color: var(--color-interact);
+	background-color: var(--color-interactive);
 }
 
 body {
-	min-width: 256px;
 	/* set default color  */
 	background-color: var(--color-background);
 	color: var(--color-content);
 
 	/* set default font  */
-	font-family: 'Overpass Mono', monospace;
-	/* font-family: 'Jost'; */
+	font-family: Arial, sans-serif;
 	font-size: 18px;
-	/* line-height: 1.7; */
-	/* letter-spacing: 0.09em; */
-	/* word-spacing: 5px; */
-	font-size: clamp(12px, 2vw, 20px);
+	line-height: 1.6;
+	letter-spacing: 0.05em;
+
+	font-size: clamp(0.7rem, 2vw, 1.4rem);
 
 	/* reset box sizing on body */
 	box-sizing: border-box;
@@ -74,12 +72,12 @@ body > div#svelte {
 	/* text-rendering: optimizeSpeed; */
 }
 *::selection {
-	background: var(--color-interact);
+	background: var(--color-interactive);
 	color: var(--color-background);
 }
 
 a {
-	color: var(--color-interact);
+	color: var(--color-interactive);
 	text-decoration: none;
 }
 
@@ -102,23 +100,24 @@ h5,
 h6 {
 	margin: 0;
 }
+
 h1 {
-	font-size: 2em;
+	font-size: 2.2em;
 }
 h2 {
-	font-size: 1.75em;
+	font-size: 1.8em;
 }
 h3 {
-	font-size: 1.5em;
+	font-size: 1.4em;
 }
 h4 {
-	font-size: 1.25em;
+	font-size: 1.4em;
 }
 h5 {
-	font-size: 1em;
+	font-size: 1.2em;
 }
 h6 {
-	font-size: 0.875em;
+	font-size: 1em;
 }
 
 img {
@@ -129,4 +128,25 @@ ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+@keyframes item-fade-in {
+	0% {
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+}
+.fadein {
+	animation: item-fade-in 0.15s ease-out backwards;
+}
+
+.article {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	max-width: var(--main-content-width);
+
+	padding: var(--box-space);
+	margin: calc(var(--section-space) / 2) 0;
 }

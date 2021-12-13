@@ -1,3 +1,13 @@
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 256 256">
-  <path class="y" stroke="#6eff9f" stroke-linecap="butt" stroke-miterlimit="8" stroke-width="52" d="m128 181-35 35H40V40l176 176V40h-53l-35 35"/>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <style>
+        path {
+            stroke: lightgray;
+            fill: none;
+            stroke-width: 5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+    <path d="m50 50 20-20v40L30 30v54.6A40 40 0 1 1 50 90"/>
 </svg>
