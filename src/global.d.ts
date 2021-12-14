@@ -37,8 +37,10 @@ type BlogPostType = {
 	author: string;
 	published: string;
 	tags: string[];
+	slug: string;
 	title: string;
 	content: string;
+	author: string;
 	meta?: PostMetaType;
 };
 

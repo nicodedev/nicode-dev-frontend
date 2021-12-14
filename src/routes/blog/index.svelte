@@ -17,10 +17,12 @@
 <article class="article fadein">
 	<h1>Blog</h1>
 	<ul>
-		{#each posts as { title, published }}
+		{#each posts as { slug, title, published, meta: { readability, readingTime, wordCount } }}
 			<li>
-				<span>{published}</span>
-				<a href="blog/{title}">{title}</a>
+				<div>
+					<span>{published}</span>
+					<a href="blog/{slug}">{title}</a>
+				</div>
 			</li>
 		{/each}
 	</ul>

@@ -81,13 +81,14 @@ export const blogPosts: BlogPostType[] = [
 		visible: true,
 		published: '2020-01-01',
 		tags: ['javascript', 'web', 'frontend'],
+		slug: 'The future of the web',
 		title: 'The future of the web',
-		preamble: 'How your cat is planning to take over the world',
 		content: `
 			Cats are going to be the future of the web.
 			The future of the web is a lot more than just a browser.
 			It is a platform that enables us to create content, communicate, and interact with each other.
 			The future of the web is a platform that enables us to create content, communicate, and interact with each other.
-		`
+		`,
+		author: 'TestMan'
 	}
 ];
