@@ -1,9 +1,9 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
 	export const load: Load = async ({ page, stuff }) => {
-		const post = stuff.posts.find((p) => p.slug === page.params.title);
+		const post = stuff.posts.find((p: BlogPostType) => p.slug === page.params.slug);
 		if (!post) {
-			return { status: 404, error: `Not found "${page.params.title}"` };
+			return { status: 404, error: `Not found "${page.params.slug}"` };
 		}
 		return { props: { post } };
 	};

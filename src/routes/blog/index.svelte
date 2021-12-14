@@ -17,7 +17,7 @@
 <article class="article fadein">
 	<h1>Blog</h1>
 	<ul>
-		{#each posts as { slug, title, published, meta: { readability, readingTime, wordCount } }}
+		{#each posts as { slug, title, published }}
 			<li>
 				<div>
 					<span>{published}</span>

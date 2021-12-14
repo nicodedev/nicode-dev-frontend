@@ -11,11 +11,11 @@
 	};
 </script>
 
-<script>
+<script lang="ts">
 	import { dev } from '$app/env';
-	export let status;
-	export let message;
-	export let stack;
+	export let status: number;
+	export let message: string;
+	export let stack: string;
 </script>
 
 <h1>{status}</h1>

@@ -13,7 +13,7 @@
 
 <script lang="ts">
 	import HashSection from '$lib/wrappers/HashSection.svelte';
-	export let consultants;
+	export let consultants: ConsultantType[];
 </script>
 
 <svelte:head>

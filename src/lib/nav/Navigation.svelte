@@ -1,7 +1,3 @@
-<script>
-	const route = [{ desc: 'n' }];
-</script>
-
 <nav>
 	<div>
 		<a href="/" aria-label="front page">
