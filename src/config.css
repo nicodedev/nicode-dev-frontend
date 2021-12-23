@@ -8,7 +8,7 @@
 	--site-width: 2560px;
 
 	/* minimum padding space for content not supposed to touch the window edge*/
-	--box-space: 1rem;
+	--box-space: 2rem;
 	/* space between each section of a page */
 	--section-space: 6rem;
 

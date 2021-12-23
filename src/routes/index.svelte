@@ -37,9 +37,11 @@
 </article>
 
 <style>
+	article {
+		gap: 2rem;
+	}
 	h1 {
 		font-size: 4em;
-		margin-bottom: var(--box-space);
 	}
 
 	p {
@@ -50,6 +52,8 @@
 		max-width: 26ch;
 	}
 	div {
+		gap: 2rem;
+
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 
@@ -61,14 +65,12 @@
 		div {
 			grid-template-columns: 1fr;
 		}
-	}
-
-	@media (max-width: 420px) {
 		h1 {
 			max-width: 8ch;
 		}
 		article {
 			align-items: center;
+			font-size: 1.2em;
 		}
 	}
 

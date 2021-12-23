@@ -39,7 +39,7 @@
 		gap: var(--space);
 	}
 	svg {
-		height: calc(var(--space) * 1.5);
+		height: 55px;
 	}
 
 	path {

@@ -16,7 +16,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		gap: 0.5em;
+		gap: 1em;
 		font-size: 1.5em;
 		max-width: 500px;
 	}
