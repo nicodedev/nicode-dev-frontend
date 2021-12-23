@@ -31,7 +31,7 @@
 		</span>
 	</div>
 
-	<article class="article fadein paper">
+	<article class="page fadein">
 		<div>
 			<h1>
 				{post.title}
@@ -47,7 +47,7 @@
 <style>
 	.blog-post {
 		max-width: 80ch;
-		margin: var(--box-space) 0;
+		margin: var(--section-space) 0;
 	}
 	article {
 		gap: 1em;

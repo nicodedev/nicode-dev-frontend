@@ -12,7 +12,9 @@
 </script>
 
 <script lang="ts">
-	import HashSection from '$lib/wrappers/HashSection.svelte';
+	import Background from '$lib/backdrops/Background.svelte';
+	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
+
 	export let consultants: ConsultantType[];
 </script>
 
@@ -20,31 +22,65 @@
 	<title>nicode</title>
 </svelte:head>
 
-<article class="article fadein">
-	<HashSection title="Welcome to nicode!">
-		<p>We are a tiny consultancy firm focused on people as much as code.</p>
-		<div>
-			{#each consultants as consultant}
-				<a sveltekit:prefetch href={consultant.name}>
-					<span>{consultant.name}</span>
-				</a>
-			{/each}
-		</div>
-	</HashSection>
+<Background bgvariation={2} />
+
+<article class="page">
+	<h1><span>Welcome to</span> <span>nicode</span></h1>
+	<div>
+		<p>
+			<span>
+				We are a tiny consultancy firm focused on people as much as code<span class="blnk">_</span>
+			</span>
+		</p>
+		<ConsultantCta {consultants} />
+	</div>
 </article>
 
 <style>
-	a {
-		border-radius: 6px;
-		text-decoration: none;
-		padding: 0.5em 1em;
-		border: 2px solid var(--color-interactive);
+	h1 {
+		font-size: 4em;
+		margin-bottom: var(--box-space);
+	}
+
+	p {
+		display: flex;
+		align-items: center;
+		font-size: 1.2em;
+		padding: calc(var(--box-space) * 0.4);
+		max-width: 26ch;
 	}
 	div {
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		gap: 1em;
-		margin: 2em auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		border-radius: 6px;
+		overflow: hidden;
+	}
+
+	@media (max-width: 500px) {
+		div {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 420px) {
+		h1 {
+			max-width: 8ch;
+		}
+		article {
+			align-items: center;
+		}
+	}
+
+	.blnk {
+		animation: blink ease-in-out 0.66s infinite alternate;
+	}
+	@keyframes blink {
+		0% {
+			opacity: 0;
+		}
+		70% {
+			opacity: 1;
+		}
 	}
 </style>

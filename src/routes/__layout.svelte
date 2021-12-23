@@ -36,7 +36,8 @@
 	}
 
 	header {
-		padding: calc(var(--box-space) / 2) var(--box-space) 0;
+		--pheader: calc(var(--box-space) * 0.5);
+		padding: var(--pheader) calc(var(--pheader) + 30px) var(--pheader) var(--pheader);
 	}
 	main {
 		flex: auto;
@@ -44,7 +45,7 @@
 		z-index: 10;
 	}
 	footer {
-		padding: var(--box-space) var(--box-space) calc(var(--box-space) / 2);
+		padding: var(--box-space) var(--box-space) calc(var(--box-space) / 4);
 
 		color: var(--color-content);
 	}
@@ -52,7 +53,7 @@
 	footer > p {
 		max-width: var(--site-width);
 		width: 100%;
-		font-size: 0.65em;
-		opacity: 0.8;
+		font-size: 0.6em;
+		opacity: 0.6;
 	}
 </style>

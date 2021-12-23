@@ -14,7 +14,7 @@
 	<title>nicode - blog</title>
 </svelte:head>
 
-<article class="article fadein">
+<article class="page fadein">
 	<h1>Blog</h1>
 	<ul>
 		{#each posts as { slug, title, published }}

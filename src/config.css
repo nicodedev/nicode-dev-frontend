@@ -1,25 +1,28 @@
 :root {
-	--color-content: #415364;
-	--color-background: #d9e4ec;
-	--color-interactive: #009166;
+	--color-content: #def1ff;
+	--color-background: #1a242f;
+	--color-interactive: #00ffb3;
 
 	/* set a size basis for main content */
 	--main-content-width: 960px;
 	--site-width: 2560px;
 
 	/* minimum padding space for content not supposed to touch the window edge*/
-	--box-space: 2em;
+	--box-space: 1rem;
 	/* space between each section of a page */
-	--section-space: 6em;
+	--section-space: 6rem;
+
+	--shadow-paper: 0 12px 10px rgba(0, 0, 0, 0.06), 0 22px 17px rgba(0, 0, 0, 0.07),
+		0 41px 33px rgba(0, 0, 0, 0.08), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: light) {
 	:root {
-		--color-content: #d9e4ec;
-		--color-background: #252e37;
-		--color-interactive: #00ffb3;
+		--color-content: #223d57;
+		--color-background: #c5e3f9;
+		--color-interactive: #009d6e;
 	}
-}
+} */
 
 body {
 	font-family: Archivo, sans-serif;

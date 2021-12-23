@@ -1,6 +1,19 @@
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
+	export const load: Load = async ({ page, fetch }) => {
+		const res = await fetch(`/${page.params.consultantName}.json`);
+
+		if (!res.ok) return;
+
+		const { consultant } = await res.json();
+
+		return { props: { consultant } };
+	};
+</script>
+
 <script lang="ts">
-	import Projects from './projects/Projects.svelte';
-	import ConsultantHeroSection from './hero/ConsultantHeroSection.svelte';
+	import Projects from '$lib/consultant/projects/Projects.svelte';
+	import ConsultantHeroSection from '$lib/consultant/hero/ConsultantHeroSection.svelte';
 	import HashSection from '$lib/wrappers/HashSection.svelte';
 
 	export let consultant: ConsultantType;
@@ -8,7 +21,11 @@
 	let { availability, focus } = consultant;
 </script>
 
-<article class="article fadein">
+<svelte:head>
+	<title>nicode - {consultant.name}</title>
+</svelte:head>
+
+<article class="page fadein">
 	<ConsultantHeroSection {consultant} />
 
 	<HashSection title="About Me">

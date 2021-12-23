@@ -36,6 +36,7 @@ type BlogPostType = {
 	visible: boolean;
 	author: string;
 	published: string;
+	updated?: string;
 	tags: string[];
 	slug: string;
 	title: string;

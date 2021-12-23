@@ -48,7 +48,7 @@
 		position: fixed;
 		box-sizing: border-box;
 		user-select: none;
-		z-index: 10;
+		z-index: 1;
 		right: 0;
 
 		color: var(--color-content);

@@ -1,9 +1,6 @@
 <script lang="ts">
-	import SvgFilter from './_SvgFilter.svelte';
 	export let consultant: ConsultantType;
 </script>
-
-<SvgFilter />
 
 <div>
 	<img src={consultant.headshot} alt="consultant {consultant.name}" width="500px" height="500px" />
@@ -53,12 +50,7 @@
 		color: rgba(0, 0, 0, 0);
 		animation: fadeInAltAttr 0.2s 0.3s ease-in-out forwards;
 
-		filter: sepia(1) hue-rotate(170deg) brightness(1.1) saturate(0.2);
-	}
-	@media (prefers-color-scheme: dark) {
-		img {
-			filter: sepia(1) hue-rotate(170deg) brightness(0.9) saturate(0.5);
-		}
+		filter: sepia(1) hue-rotate(170deg) brightness(0.95) saturate(0.3);
 	}
 	@keyframes fadeInAltAttr {
 		to {
