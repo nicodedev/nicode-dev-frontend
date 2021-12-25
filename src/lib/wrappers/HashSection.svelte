@@ -37,13 +37,6 @@
 		section h2 a {
 			position: absolute;
 			left: -1em;
-			transition: opacity 0.1s 0.1s ease-in-out;
-			opacity: 0;
-		}
-		section h2:hover a,
-		section:focus-within h2 a {
-			transition: opacity 0.05s;
-			opacity: 1;
 		}
 	}
 </style>

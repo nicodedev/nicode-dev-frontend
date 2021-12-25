@@ -6,17 +6,19 @@
 	import Navigation from '$lib/nav/Navigation.svelte';
 </script>
 
-<header>
-	<Navigation />
-</header>
+<div style="display: contents;">
+	<header>
+		<Navigation />
+	</header>
 
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
 
-<footer>
-	<p>Created with love, <time datetime="2021-02">Dec 2021</time></p>
-</footer>
+	<footer>
+		<p>Created with love, <time datetime="2021-02">Dec 2021</time></p>
+	</footer>
+</div>
 
 <style>
 	header,
@@ -45,7 +47,7 @@
 		z-index: 10;
 	}
 	footer {
-		padding: var(--box-space) var(--box-space) calc(var(--box-space) / 4);
+		padding: calc(var(--box-space) * 0.5) var(--box-space);
 
 		color: var(--color-content);
 	}

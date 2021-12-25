@@ -34,9 +34,10 @@
 	address {
 		display: flex;
 		flex-flow: column;
-		gap: 0.25em;
+		gap: 0.5em;
 		font-size: 0.8em;
 		justify-content: space-between;
+		max-width: max-content;
 	}
 	address a {
 		display: flex;

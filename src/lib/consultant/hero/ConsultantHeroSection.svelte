@@ -22,6 +22,7 @@
 	@media (max-width: 600px) {
 		section {
 			flex-direction: column;
+			align-items: center;
 		}
 	}
 </style>

@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
+	export const prerender = true;
 	export const load: Load = async ({ fetch }) => {
 		const res = await fetch(`index.json`);
 
@@ -22,7 +23,7 @@
 	<title>nicode</title>
 </svelte:head>
 
-<Background bgvariation={2} />
+<Background bgvariation={new Date().getHours()} />
 
 <article class="page">
 	<h1><span>Welcome to</span> <span>nicode</span></h1>
@@ -38,10 +39,17 @@
 
 <style>
 	article {
-		gap: 2rem;
+		gap: var(--box-space);
+		width: max-content;
+
+		min-height: 60%;
+		justify-content: center;
 	}
 	h1 {
 		font-size: 4em;
+	}
+	h1 > span:first-of-type {
+		font-weight: normal;
 	}
 
 	p {
@@ -49,7 +57,7 @@
 		align-items: center;
 		font-size: 1.2em;
 		padding: calc(var(--box-space) * 0.4);
-		max-width: 26ch;
+		max-width: 25ch;
 	}
 	div {
 		gap: 2rem;
@@ -61,16 +69,25 @@
 		overflow: hidden;
 	}
 
-	@media (max-width: 500px) {
+	@media (max-width: 550px) {
 		div {
 			grid-template-columns: 1fr;
 		}
 		h1 {
 			max-width: 8ch;
+			line-height: 1.2;
+			text-align: center;
+		}
+		p {
+			padding: calc(var(--box-space) * 0.2);
+			text-align: justify;
+			letter-spacing: 1.4px;
 		}
 		article {
 			align-items: center;
 			font-size: 1.2em;
+			margin: 0;
+			padding: calc(var(--box-space) * 0.5);
 		}
 	}
 

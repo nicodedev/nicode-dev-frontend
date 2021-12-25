@@ -33,12 +33,10 @@
 
 		display: flex;
 		flex-direction: column;
-		font-size: 0.9em;
 	}
 
 	@media (min-width: 1000px) {
 		li {
-			max-width: 90%;
 			margin: 0 auto;
 		}
 	}

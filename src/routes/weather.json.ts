@@ -37,7 +37,6 @@ export async function get() {
 				'User-Agent': 'weather-endpoint-1.0' /** required by api.met.no */
 			}
 		});
-		console.log(res);
 
 		if (res.ok) {
 			try {

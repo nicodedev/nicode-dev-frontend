@@ -1,10 +1,13 @@
 <script lang="ts">
-	type BackgroundVariation = undefined | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
-	export let bgvariation: BackgroundVariation;
+	const bgCount = 6;
+	export let bgvariation = null;
 </script>
 
-{#if bgvariation}
-	<div aria-hidden="true" class="bg b{bgvariation}" />
+{#if bgvariation !== null}
+	<div
+		aria-hidden="true"
+		class="bg b{Math.max(1, Math.min(((bgvariation + bgCount - 1) % bgCount) + 1, bgCount))}"
+	/>
 {/if}
 
 {#if $$slots.default}
@@ -38,12 +41,12 @@
 	.b1 {
 		background-image: image-set(url('/bgs/opt1.webp') 1x, url('/bgs/opt1.jpg') 1x);
 		background-image: -webkit-image-set(url('/bgs/opt1.webp') 1x, url('/bgs/opt1.jpg') 1x);
-		opacity: 0.1;
+		opacity: 0.08;
 	}
 	.b2 {
 		background-image: image-set(url('/bgs/opt2.webp') 1x, url('/bgs/opt2.jpg') 1x);
 		background-image: -webkit-image-set(url('/bgs/opt2.webp') 1x, url('/bgs/opt2.jpg') 1x);
-		opacity: 0.15;
+		opacity: 0.2;
 	}
 	.b3 {
 		background-image: image-set(url('/bgs/opt3.webp') 1x, url('/bgs/opt3.jpg') 1x);
@@ -53,11 +56,16 @@
 	.b4 {
 		background-image: image-set(url('/bgs/opt4.webp') 1x, url('/bgs/opt4.jpg') 1x);
 		background-image: -webkit-image-set(url('/bgs/opt4.webp') 1x, url('/bgs/opt4.jpg') 1x);
-		opacity: 0.15;
+		opacity: 0.1;
 	}
 	.b5 {
 		background-image: image-set(url('/bgs/opt5.webp') 1x, url('/bgs/opt5.jpg') 1x);
 		background-image: -webkit-image-set(url('/bgs/opt5.webp') 1x, url('/bgs/opt5.jpg') 1x);
-		opacity: 0.1;
+		opacity: 0.08;
+	}
+	.b6 {
+		background-image: image-set(url('/bgs/opt6.webp') 1x, url('/bgs/opt6.jpg') 1x);
+		background-image: -webkit-image-set(url('/bgs/opt6.webp') 1x, url('/bgs/opt6.jpg') 1x);
+		opacity: 0.05;
 	}
 </style>

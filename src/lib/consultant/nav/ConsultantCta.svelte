@@ -17,10 +17,10 @@
 
 <style>
 	section {
-		padding: 1em;
+		padding: calc(var(--box-space) * 0.4);
 	}
 	h2 {
-		font-size: 2em;
+		margin-top: -0.4em;
 	}
 	ul {
 		display: flex;
@@ -36,16 +36,5 @@
 
 		color: var(--color-interactive);
 		border: 1px solid var(--color-interactive);
-	}
-
-	/* a:hover,
-	a:focus {
-
-	} */
-
-	@media (min-width: 500px) {
-		section {
-			margin-top: -1em;
-		}
 	}
 </style>

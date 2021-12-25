@@ -24,5 +24,8 @@
 		div {
 			max-width: 300px;
 		}
+		p {
+			letter-spacing: 1.4px;
+		}
 	}
 </style>

@@ -1,6 +1,6 @@
 :root {
-	--color-content: #def1ff;
-	--color-background: #1a242f;
+	--color-content: #d1e5f3;
+	--color-background: #080720;
 	--color-interactive: #00ffb3;
 
 	/* set a size basis for main content */
@@ -15,14 +15,6 @@
 	--shadow-paper: 0 12px 10px rgba(0, 0, 0, 0.06), 0 22px 17px rgba(0, 0, 0, 0.07),
 		0 41px 33px rgba(0, 0, 0, 0.08), 0 100px 80px rgba(0, 0, 0, 0.12);
 }
-
-/* @media (prefers-color-scheme: light) {
-	:root {
-		--color-content: #223d57;
-		--color-background: #c5e3f9;
-		--color-interactive: #009d6e;
-	}
-} */
 
 body {
 	font-family: Archivo, sans-serif;

@@ -18,12 +18,12 @@
 		border-radius: 9999px;
 		overflow: hidden;
 
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,0.03)' d='M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z' /%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,0.1)' d='M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z' /%3E%3C/svg%3E");
 		background-size: 130%;
 		background-position: center 25%;
 		background-repeat: no-repeat;
 
-		box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.3);
+		box-shadow: 8px 8px 30px -2px rgba(0, 0, 0, 0.3);
 	}
 
 	div::after {
@@ -46,21 +46,14 @@
 		justify-content: center;
 		align-items: center;
 
-		/* hack to hide alt text if load fail (aviid layout shift uglyness) */
-		color: rgba(0, 0, 0, 0);
-		animation: fadeInAltAttr 0.2s 0.3s ease-in-out forwards;
+		color: var(--color-content);
 
 		filter: sepia(1) hue-rotate(170deg) brightness(0.95) saturate(0.3);
-	}
-	@keyframes fadeInAltAttr {
-		to {
-			color: var(--color-content);
-		}
 	}
 	@media (max-width: 600px) {
 		div {
 			border-radius: 6px;
-			max-width: 300px;
+			width: min(100%, 300px);
 		}
 	}
 </style>
