@@ -6,7 +6,7 @@
 
 <div>
 	<p>
-		Hi i am <span class="name">{consultant.name}</span>, {consultant.preamble}
+		Hi! I'm <span class="name">{consultant.name}</span>, {consultant.preamble}
 	</p>
 	<Address contact={consultant.contact} />
 </div>
