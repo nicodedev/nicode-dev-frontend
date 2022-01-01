@@ -1,13 +1,7 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
-	export const prerender = true;
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch(`index.json`);
-
-		if (!res.ok) return;
-
-		const { consultants } = await res.json();
-
+	export const load: Load = async ({ stuff }) => {
+		const consultants: ConsultantType[] = stuff.consultants;
 		return { props: { consultants } };
 	};
 </script>

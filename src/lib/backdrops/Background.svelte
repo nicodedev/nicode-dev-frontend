@@ -6,7 +6,10 @@
 {#if bgvariation !== null}
 	<div
 		aria-hidden="true"
-		class="bg b{Math.max(1, Math.min(((bgvariation + bgCount - 1) % bgCount) + 1, bgCount))}"
+		class="bg b{Math.max(
+			1,
+			Math.min(((Math.abs(bgvariation) + bgCount - 1) % bgCount) + 1, bgCount)
+		)}"
 	/>
 {/if}
 

@@ -1,12 +1,9 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
-	export const prerender = true;
-	export const load: Load = async ({ page, fetch }) => {
-		const res = await fetch(`/${page.params.consultantName}.json`);
-
-		if (!res.ok) return;
-
-		const { consultant } = await res.json();
+	export const load: Load = async ({ stuff, page }) => {
+		const consultant = await stuff.consultants.find(({ name }) => {
+			return name.toLowerCase() === page.params.consultantName.toLowerCase();
+		});
 
 		return { props: { consultant } };
 	};
@@ -24,7 +21,6 @@
 
 <svelte:head>
 	<title>nicode - {consultant.name}</title>
-	<link rel="preload" as="image" href={consultant.headshot} />
 </svelte:head>
 
 <article class="page">
