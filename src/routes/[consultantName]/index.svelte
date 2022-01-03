@@ -5,6 +5,8 @@
 			return name.toLowerCase() === page.params.consultantName.toLowerCase();
 		});
 
+		if (!consultant) return;
+
 		return { props: { consultant } };
 	};
 </script>
