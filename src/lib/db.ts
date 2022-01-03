@@ -4,7 +4,7 @@ export const consultants: ConsultantType[] = [
 		name: 'Nicolai',
 		headshot: 'hs/nicolai.webp',
 		contact: {
-			email: 'nicolai@gjellestad.net',
+			email: 'nicolai@nicode.dev',
 			mobile: '+4799428603',
 			linkedin: 'ngjellestad'
 		},
@@ -42,7 +42,7 @@ export const consultants: ConsultantType[] = [
 		name: 'Hans',
 		headshot: 'hs/hans.webp',
 		contact: {
-			email: 'box@melaa.net',
+			email: 'hans@nicode.dev',
 			mobile: '+4748149606',
 			linkedin: ''
 		},
