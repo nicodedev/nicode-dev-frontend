@@ -24,4 +24,15 @@ class Debounce {
 	};
 }
 
-export { Debounce };
+function* generateId(initial: number = 0) {
+	let id = initial;
+	while (true) {
+		yield id++;
+	}
+}
+
+function clamp(value: number, min: number, max: number) {
+	return Math.max(min, Math.min(value, max));
+}
+
+export { Debounce, generateId, clamp };

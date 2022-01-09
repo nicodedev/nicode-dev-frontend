@@ -8,6 +8,7 @@
 
 <script lang="ts">
 	import Background from '$lib/backdrops/Background.svelte';
+	import Nodes from '$lib/backdrops/Nodes.svelte';
 	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
 
 	export let consultants: ConsultantType[];
@@ -17,7 +18,9 @@
 	<title>nicode</title>
 </svelte:head>
 
-<Background bgvariation={new Date().getHours()} />
+<Background bgvariation={new Date().getMinutes()}>
+	<Nodes />
+</Background>
 
 <article class="page">
 	<h1><span>Welcome to</span> <span>nicode</span></h1>
@@ -30,7 +33,6 @@
 		<ConsultantCta {consultants} />
 	</div>
 </article>
-
 <style>
 	article {
 		gap: var(--box-space);

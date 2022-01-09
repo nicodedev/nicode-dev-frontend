@@ -1,16 +1,14 @@
 <script lang="ts">
 	const bgCount = 9;
 	export let bgvariation = null;
+
+	const imgIndex = (variation) => {
+		return Math.max(1, Math.min(((Math.abs(variation) + bgCount - 1) % bgCount) + 1, bgCount));
+	};
 </script>
 
 {#if bgvariation !== null}
-	<div
-		aria-hidden="true"
-		class="bg b{Math.max(
-			1,
-			Math.min(((Math.abs(bgvariation) + bgCount - 1) % bgCount) + 1, bgCount)
-		)}"
-	/>
+	<div aria-hidden="true" class="bg b{imgIndex(bgvariation)}" />
 {/if}
 
 {#if $$slots.default}
@@ -37,10 +35,18 @@
 		flex-direction: column;
 	}
 	.bg {
+		/* background-size: cover; */
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
+		animation: bg-fade-in 0.5s backwards;
 	}
+	@keyframes bg-fade-in {
+		from {
+			opacity: 0;
+		}
+	}
+
 	.b1 {
 		background-image: image-set(url('/bgs/1.webp') 1x, url('/bgs/1.jpg') 1x);
 		background-image: -webkit-image-set(url('/bgs/1.webp') 1x, url('/bgs/1.jpg') 1x);
@@ -64,7 +70,7 @@
 	.b5 {
 		background-image: image-set(url('/bgs/5.webp') 1x, url('/bgs/5.jpg') 1x);
 		background-image: -webkit-image-set(url('/bgs/5.webp') 1x, url('/bgs/5.jpg') 1x);
-		opacity: 0.08;
+		opacity: 0.1;
 	}
 	.b6 {
 		background-image: image-set(url('/bgs/6.webp') 1x, url('/bgs/6.jpg') 1x);
