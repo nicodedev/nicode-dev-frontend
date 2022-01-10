@@ -35,4 +35,25 @@ function clamp(value: number, min: number, max: number) {
 	return Math.max(min, Math.min(value, max));
 }
 
-export { Debounce, generateId, clamp };
+function prettyTime(ms: number) {
+	let delta = ms;
+	const days = Math.floor(delta / (1000 * 60 * 60 * 24));
+	delta -= days * (1000 * 60 * 60 * 24);
+	const hours = Math.floor(delta / (1000 * 60 * 60));
+	delta -= hours * (1000 * 60 * 60);
+	const minutes = Math.floor(delta / (1000 * 60));
+	delta -= minutes * (1000 * 60);
+	const seconds = Math.floor(delta / 1000);
+	delta -= seconds * 1000;
+	const milliseconds = Math.floor(delta);
+
+	return {
+		days,
+		hours,
+		minutes,
+		seconds,
+		milliseconds
+	};
+}
+
+export { Debounce, generateId, clamp, prettyTime };
