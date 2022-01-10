@@ -17,8 +17,23 @@
 	import '../default.css';
 	import '../config.css';
 	import Navigation from '$lib/nav/Navigation.svelte';
+	import { session } from '$app/stores';
+	import { onMount } from 'svelte';
+	import { prettyTime } from '$lib/utils';
 
 	export let consultants;
+
+	onMount(() => {
+		// uptime
+
+		console.log(
+			'uptime',
+			Object.entries(prettyTime($session.stats.uptime))
+				.filter(([k, v]) => v > 0)
+				.map(([k, v]) => `${v} ${k}`)
+				.join(' ') + ` - ${$session.stats.sessions} sessions`
+		);
+	});
 </script>
 
 <svelte:head>
