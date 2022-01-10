@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { clamp, Debounce, generateId } from '$lib/utils';
 	import { onMount } from 'svelte';
-	let W, H, CX, CY, canvas, ctx;
+	let W, H, DPR, canvas, ctx;
 	let points = [];
 
 	const resizeCooldown = new Debounce(() => {
 		canvas.width = W;
 		canvas.height = H;
-		CX = W / 2;
-		CY = H / 2;
+
+		DPR = window.devicePixelRatio;
 		points = [];
 	}, 100);
 
@@ -44,7 +44,7 @@
 		}
 		update(ps) {
 			this.drawTo = [];
-			const maxRange = Math.min(Math.min(W, H) / 6, 250);
+			const maxRange = Math.min((W + H / 2) / (6 * DPR), 200) * DPR;
 			for (let i = 0; i < ps.length; i++) {
 				if (this.id < ps[i].id) {
 					if (this.distanceTo(ps[i]) < maxRange) {
@@ -92,8 +92,8 @@
 			this.y = Math.random() * H;
 		}
 		randomize() {
-			this.vx = (Math.random() * 2 - 1) * 0.08;
-			this.vy = (Math.random() * 2 - 1) * 0.08;
+			this.vx = (Math.random() * 2 - 1) * 0.04;
+			this.vy = (Math.random() * 2 - 1) * 0.04;
 		}
 	}
 
@@ -106,11 +106,14 @@
 		const rafLoop = () => {
 			ctx.font = `12px sans-serif`;
 			ctx.fillStyle = 'hsla(260, 80%, 30%, 0.3)';
-			ctx.strokeStyle = 'hsla(260, 80%, 30%, 0.2)';
+			ctx.strokeStyle = 'hsla(260, 80%, 30%, 0.3)';
 
 			ctx.clearRect(0, 0, W, H);
 
-			if (points.length < clamp(Math.max(W, H) / 20, 50, 200)) {
+			const nodeCount = Math.min((W + H / 2) / (20 * DPR), 200) * DPR;
+			console.log(nodeCount);
+
+			if (points.length < nodeCount) {
 				points.push(new Point(idIter.next().value));
 			}
 
