@@ -49,7 +49,7 @@ export const consultants: ConsultantType[] = [
 		preamble: 'a developer with a passion for making great user experiences.',
 		availability: "I'm available for full time projects from January 2022.",
 		focus:
-			'As a developer focusing on frontend and user experience, it is important for me that communication is clear, not only to the end user but also in such a way that I am enabling all stakeholders to do great. I have a knack for data wrangling and love cooking up a script in Python and have it look great in a JavaScript based frontend. Lately I have been working on a programmatic advertisement platform written in Svelte.',
+			'A front end developer focusing on node and typescript. Lately I’ve built an application and API for a programmatic advertisement platform powered by svelte and sapper. I have experience as tech lead and ux-designer. I love solving problems and learning something new along the way.',
 		projects: [
 			{
 				title: 'Developer and tech lead at Nurofy',
