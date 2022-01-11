@@ -111,7 +111,6 @@
 			ctx.clearRect(0, 0, W, H);
 
 			const nodeCount = Math.min((W + H / 2) / (20 * DPR), 200) * DPR;
-			console.log(nodeCount);
 
 			if (points.length < nodeCount) {
 				points.push(new Point(idIter.next().value));
