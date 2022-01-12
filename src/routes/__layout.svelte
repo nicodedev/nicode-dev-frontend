@@ -27,11 +27,11 @@
 		// uptime
 
 		console.log(
-			'uptime',
-			Object.entries(prettyTime($session.stats.uptime))
+			'awake for:',
+			Object.entries(prettyTime($session.stats.awake))
 				.filter(([k, v]) => v > 0)
 				.map(([k, v]) => `${v} ${k}`)
-				.join(' ') + ` - ${$session.stats.sessions} sessions`
+				.join(' ')
 		);
 	});
 </script>
