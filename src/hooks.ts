@@ -2,7 +2,6 @@ import cookie from 'cookie';
 import { v4 as uuid } from '@lukeed/uuid';
 import type { Handle, GetSession } from '@sveltejs/kit';
 
-let uniqueId = 0;
 const uptime = new Date().getTime();
 
 export const handle: Handle = async ({ request, resolve }) => {
@@ -16,12 +15,11 @@ export const handle: Handle = async ({ request, resolve }) => {
 
 	const response = await resolve(request);
 
-	if (!cookies.userid && request.headers['host']) {
+	if (!cookies.userid) {
 		response.headers['set-cookie'] = cookie.serialize('userid', request.locals.userid, {
 			path: '/',
 			httpOnly: true
 		});
-		uniqueId++;
 	}
 
 	console.log(request.method, response.status, request.path);
@@ -34,8 +32,7 @@ export const getSession: GetSession = async (request) => {
 		? {
 				userid: request.locals.userid,
 				stats: {
-					sessions: uniqueId,
-					uptime: new Date().getTime() - uptime
+					awake: new Date().getTime() - uptime
 				}
 		  }
 		: {};
