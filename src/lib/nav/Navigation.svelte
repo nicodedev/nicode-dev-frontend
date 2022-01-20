@@ -1,6 +1,16 @@
+<script>
+	import { page } from '$app/stores';
+	$: console.log($page);
+</script>
+
 <nav>
 	<div>
-		<a href="/" aria-label="front page">
+		<a
+			href="/"
+			aria-label="front page"
+			aria-current={$page.path === '/' ? 'page' : undefined}
+			class:current={$page.path === '/'}
+		>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 				<title>Nicode</title>
 				<description>A circle with the letter "N" inside, created by a single line</description>
@@ -48,5 +58,11 @@
 		stroke-width: 5;
 		stroke-linecap: round;
 		stroke-linejoin: round;
+
+		transition: stroke 0.2s ease-in-out;
+	}
+
+	.current path {
+		stroke: var(--color-content);
 	}
 </style>
