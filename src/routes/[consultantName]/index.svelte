@@ -1,15 +1,15 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
 	export const load: Load = async ({ page }) => {
-		console.log('asdasdas');
-
-		const res = await fetch(`${page.params.consultantName}.json`);
+		const res = await fetch(`/${page.params.consultantName}.json`);
 
 		if (!res.ok) return;
 
 		const { consultant } = await res.json();
 
-		console.log('consultant', consultant);
+		if (!consultant) return;
+
+		console.log(consultant);
 
 		return { props: { consultant } };
 	};

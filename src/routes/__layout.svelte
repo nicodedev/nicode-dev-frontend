@@ -7,8 +7,6 @@
 	import { onMount } from 'svelte';
 	import { prettyTime } from '$lib/utils';
 
-	export let consultants;
-
 	onMount(() => {
 		// uptime
 
@@ -21,12 +19,6 @@
 		);
 	});
 </script>
-
-<svelte:head>
-	{#each consultants as { headshot }}
-		<link rel="preload" as="image" href={headshot} />
-	{/each}
-</svelte:head>
 
 <div style="display: contents;">
 	<header>

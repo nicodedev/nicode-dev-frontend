@@ -5,9 +5,9 @@
 
 		if (!res.ok) return;
 
-		const { availableConsultants } = await res.json();
+		const { consultants } = await res.json();
 
-		return { props: { availableConsultants } };
+		return { props: { consultants } };
 	};
 </script>
 
@@ -16,11 +16,14 @@
 	import Nodes from '$lib/backdrops/Nodes.svelte';
 	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
 
-	export let availableConsultants: Pick<ConsultantType, 'name'>[];
+	export let consultants: ConsultantType[];
 </script>
 
 <svelte:head>
 	<title>nicode</title>
+	{#each consultants as { headshot }}
+		<link rel="preload" as="image" href={headshot} />
+	{/each}
 </svelte:head>
 
 <Background bgvariation={new Date().getMinutes()}>
@@ -35,7 +38,7 @@
 				We are a tiny consultancy firm focused on people as much as code<span class="blnk">_</span>
 			</span>
 		</p>
-		<ConsultantCta consultants={availableConsultants} />
+		<ConsultantCta {consultants} />
 	</div>
 </article>
 
