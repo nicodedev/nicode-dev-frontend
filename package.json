@@ -33,6 +33,8 @@
 	"type": "module",
 	"dependencies": {
 		"@lukeed/uuid": "^2.0.0",
-		"cookie": "^0.4.1"
+		"cookie": "^0.4.1",
+		"postgres": "^1.0.2",
+		"useragent": "^2.3.0"
 	}
 }

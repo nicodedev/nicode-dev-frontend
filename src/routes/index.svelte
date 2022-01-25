@@ -1,8 +1,13 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ stuff }) => {
-		const consultants: ConsultantType[] = stuff.consultants;
-		return { props: { consultants } };
+	export const load: Load = async ({ fetch }) => {
+		const res = await fetch(`index.json`);
+
+		if (!res.ok) return;
+
+		const { availableConsultants } = await res.json();
+
+		return { props: { availableConsultants } };
 	};
 </script>
 
@@ -11,7 +16,7 @@
 	import Nodes from '$lib/backdrops/Nodes.svelte';
 	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
 
-	export let consultants: ConsultantType[];
+	export let availableConsultants: Pick<ConsultantType, 'name'>[];
 </script>
 
 <svelte:head>
@@ -30,9 +35,10 @@
 				We are a tiny consultancy firm focused on people as much as code<span class="blnk">_</span>
 			</span>
 		</p>
-		<ConsultantCta {consultants} />
+		<ConsultantCta consultants={availableConsultants} />
 	</div>
 </article>
+
 <style>
 	article {
 		gap: var(--box-space);
