@@ -6,28 +6,33 @@ import { DB } from '$lib/pgutil';
 
 const uptime = new Date().getTime();
 
-let db = null;
+const db = new DB();
+db.createTables();
 
 export const handle: Handle = async ({ request, resolve }) => {
 	const cookies = cookie.parse(request.headers.cookie || '');
 	request.locals.userid = cookies.userid || uuid();
 
-	if (!db) db = new DB();
 	request.locals.db = db;
 
 	const response = await resolve(request);
 
 	// has session
-
-	if (cookies.userid && request.headers['user-agent']) {
-		db.requestEntry({ uid: cookies.userid, path: request.path });
+	if (cookies.userid && db.up) {
+		const _q = request.query.toString();
+		const _path = request.path;
+		db.requestEntry({ uid: cookies.userid, path: _path + (_q.length ? '?' + _q : '') });
 	}
 
 	// set cookie / new session
 	if (!cookies.userid && request.headers['user-agent']) {
 		const agent = useragent.lookup(request.headers['user-agent']);
 
-		db.createSessionEntry(request.locals.userid, agent.toAgent(), agent.os.toString());
+		db.createSessionEntry({
+			uid: request.locals.userid,
+			browser: agent.toAgent(),
+			os: agent.os.toString()
+		});
 
 		response.headers['set-cookie'] = cookie.serialize('userid', request.locals.userid, {
 			path: '/',
@@ -37,10 +42,16 @@ export const handle: Handle = async ({ request, resolve }) => {
 
 	console.log(response.status, request.method, request.path);
 
+	if (['5', '4'].includes(response.status[0])) {
+		console.error(response.status[0]);
+		console.log('req-->', request);
+		console.log('res-->', response);
+	}
+
 	return response;
 };
 
-export const getSession: GetSession = async (request) => {
+export const getSession: GetSession = async () => {
 	return {
 		stats: {
 			awake: new Date().getTime() - uptime

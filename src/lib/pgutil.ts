@@ -14,14 +14,14 @@ const DEV_OPTIONS = {
 
 export class DB {
 	sql;
+	up = false;
 	constructor() {
 		const dev = MODE === 'development';
 		this.sql = dev ? postgres(DEV_OPTIONS) : postgres(process.env.DATABASE_URL);
-		this.createTables();
 	}
 
 	async createTables() {
-		this.sql`
+		await this.sql`
 			CREATE TABLE IF NOT EXISTS sessions (
 				sessionid TEXT PRIMARY KEY,
 				browser TEXT,
@@ -29,8 +29,7 @@ export class DB {
 				epoch TIMESTAMP DEFAULT LOCALTIMESTAMP
 			);
     `;
-
-		this.sql`
+		await this.sql`
 			CREATE TABLE IF NOT EXISTS session_requests (
 				sessionid TEXT,
 				path TEXT,
@@ -39,6 +38,7 @@ export class DB {
 				PRIMARY KEY(sessionid,path)
 			);
 		`;
+		this.up = true;
 	}
 
 	async createSessionEntry({ uid, browser, os }) {
@@ -63,5 +63,27 @@ export class DB {
 		if (!resp) {
 			console.error('session_requests error: ', resp);
 		}
+	}
+
+	async getSessions() {
+		const resp = await this.sql`
+			SELECT * FROM sessions
+		`;
+
+		if (!resp) {
+			console.error('getSessions error: ', resp);
+		}
+		return resp;
+	}
+
+	async getSessionRequests() {
+		const resp = await this.sql`
+			SELECT * FROM session_requests
+		`;
+
+		if (!resp) {
+			console.error('getSessionRequests error: ', resp);
+		}
+		return resp;
 	}
 }
