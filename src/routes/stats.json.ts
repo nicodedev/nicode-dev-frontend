@@ -1,7 +1,10 @@
-const sessionLogging = import.meta.env.VITE_sessionLogging;
+const { VITE_sessionLogging } = import.meta.env;
 
 export async function get(requestEvent) {
-	if (!sessionLogging) return;
+	if (!VITE_sessionLogging) {
+		console.log('session logging is disabled');
+		return;
+	}
 
 	const db = requestEvent.locals.db;
 	const sessions = await db.getSessions();
