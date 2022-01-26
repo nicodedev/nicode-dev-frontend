@@ -7,9 +7,15 @@ const sessionLogging = import.meta.env.VITE_sessionLogging;
 
 const uptime = new Date().getTime();
 
-const db = await getDB();
+let db = null;
 
 export const handle: Handle = async ({ request, resolve }) => {
+	// create connection
+	if (!db) {
+		db = await getDB();
+	}
+
+	// retrieve cookie if any
 	const cookies = cookie.parse(request.headers.cookie || '');
 	request.locals.userid = cookies.userid || uuid();
 
