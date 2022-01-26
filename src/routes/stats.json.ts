@@ -1,4 +1,8 @@
+const sessionLogging = import.meta.env.VITE_sessionLogging;
+
 export async function get(requestEvent) {
+	if (!sessionLogging) return;
+
 	const db = requestEvent.locals.db;
 	const sessions = await db.getSessions();
 

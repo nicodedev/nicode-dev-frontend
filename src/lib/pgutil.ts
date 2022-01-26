@@ -12,33 +12,33 @@ const DEV_OPTIONS = {
 	ssl: { rejectUnauthorized: false }
 };
 
-export class DB {
+class DB {
 	sql;
-	up = false;
 	constructor() {
 		const dev = MODE === 'development';
 		this.sql = dev ? postgres(DEV_OPTIONS) : postgres(process.env.DATABASE_URL);
 	}
 
-	async createTables() {
-		await this.sql`
-			CREATE TABLE IF NOT EXISTS sessions (
-				sessionid TEXT PRIMARY KEY,
-				browser TEXT,
-				os TEXT,
-				epoch TIMESTAMP DEFAULT LOCALTIMESTAMP
-			);
-    `;
-		await this.sql`
-			CREATE TABLE IF NOT EXISTS session_requests (
-				sessionid TEXT,
-				path TEXT,
-				visits BIGINT DEFAULT 1,
-				epoch TIMESTAMP DEFAULT LOCALTIMESTAMP,
-				PRIMARY KEY(sessionid,path)
-			);
-		`;
-		this.up = true;
+	createTables() {
+		return Promise.all([
+			this.sql`
+CREATE TABLE IF NOT EXISTS sessions (
+	sessionid TEXT PRIMARY KEY,
+	browser TEXT,
+	os TEXT,
+	epoch TIMESTAMP DEFAULT LOCALTIMESTAMP
+);
+`,
+			this.sql`
+	CREATE TABLE IF NOT EXISTS session_requests (
+		sessionid TEXT,
+		path TEXT,
+		visits BIGINT DEFAULT 1,
+		epoch TIMESTAMP DEFAULT LOCALTIMESTAMP,
+		PRIMARY KEY(sessionid,path)
+	);
+`
+		]);
 	}
 
 	async createSessionEntry({ uid, browser, os }) {
@@ -87,3 +87,9 @@ export class DB {
 		return resp;
 	}
 }
+
+export const getDB = async () => {
+	const _DB = new DB();
+	await _DB.createTables();
+	return _DB;
+};
