@@ -4,15 +4,13 @@ import type { Handle, GetSession } from '@sveltejs/kit';
 import useragent from 'useragent';
 import { getDB } from '$lib/pgutil';
 
-const { VITE_sessionLogging } = import.meta.env;
-
 const uptime = new Date().getTime();
 
 let db = null;
 
 export const handle: Handle = async ({ request, resolve }) => {
 	// create connection (does create a delay on _initial_ request)
-	if (VITE_sessionLogging && !db) {
+	if (import.meta.env.VITE_SESSION_LOGGING && !db) {
 		db = await getDB();
 	}
 
@@ -21,7 +19,7 @@ export const handle: Handle = async ({ request, resolve }) => {
 	request.locals.userid = cookies.userid || uuid();
 
 	// add db to locals if session logging is enabled
-	if (VITE_sessionLogging) {
+	if (import.meta.env.VITE_SESSION_LOGGING) {
 		request.locals.db = db;
 	}
 
@@ -56,7 +54,7 @@ export const handle: Handle = async ({ request, resolve }) => {
 	}
 
 	// request, response log
-	console.log(response.status, request.method, request.path);
+	console.log('>', response.status, request.method, request.path);
 
 	return response;
 };

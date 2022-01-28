@@ -1,43 +1,33 @@
 import postgres from 'postgres';
-
-const { VITE_Host, VITE_Database, VITE_User, VITE_Port, VITE_Password, MODE } = import.meta.env;
-const DEV_OPTIONS = {
-	host: VITE_Host,
-	database: VITE_Database,
-	username: VITE_User,
-	password: VITE_Password,
-	port: VITE_Port,
-	max: 10,
-	timeout: 60,
-	ssl: { rejectUnauthorized: false }
-};
-
 class DB {
 	sql;
 	constructor() {
-		const dev = MODE === 'development';
-		this.sql = dev ? postgres(DEV_OPTIONS) : postgres(process.env.DATABASE_URL);
+		this.sql = postgres(import.meta.env.VITE_DEV_DATABASE_URL || process.env.DATABASE_URL, {
+			max: 10,
+			timeout: 60,
+			ssl: { rejectUnauthorized: false }
+		});
 	}
 
 	createTables() {
 		return Promise.all([
 			this.sql`
-CREATE TABLE IF NOT EXISTS sessions (
-	sessionid TEXT PRIMARY KEY,
-	browser TEXT,
-	os TEXT,
-	epoch TIMESTAMP DEFAULT LOCALTIMESTAMP
-);
-`,
+				CREATE TABLE IF NOT EXISTS sessions (
+					sessionid TEXT PRIMARY KEY,
+					browser TEXT,
+					os TEXT,
+					epoch TIMESTAMP DEFAULT LOCALTIMESTAMP
+				);
+			`,
 			this.sql`
-	CREATE TABLE IF NOT EXISTS session_requests (
-		sessionid TEXT,
-		path TEXT,
-		visits BIGINT DEFAULT 1,
-		epoch TIMESTAMP DEFAULT LOCALTIMESTAMP,
-		PRIMARY KEY(sessionid,path)
-	);
-`
+				CREATE TABLE IF NOT EXISTS session_requests (
+					sessionid TEXT,
+					path TEXT,
+					visits BIGINT DEFAULT 1,
+					epoch TIMESTAMP DEFAULT LOCALTIMESTAMP,
+					PRIMARY KEY(sessionid,path)
+				);
+			`
 		]);
 	}
 

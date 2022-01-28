@@ -1,6 +1,3 @@
-// this endpoint is disabled
-// to enable it, remove the underscore in the file name
-
 type LocationType = {
 	lat: number;
 	lon: number;
@@ -29,6 +26,8 @@ const lastCall = new Date(0);
 let weather;
 
 export async function get() {
+	if (import.meta.env.VITE_weather !== 'true') return;
+
 	const now = new Date();
 
 	if (now.getTime() - lastCall.getTime() > thirtyMinutes) {
