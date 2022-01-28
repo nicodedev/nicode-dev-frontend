@@ -2,7 +2,16 @@ import postgres from 'postgres';
 class DB {
 	sql;
 	constructor() {
-		this.sql = postgres(import.meta.env.VITE_DEV_DATABASE_URL || process.env.DATABASE_URL, {
+		const dev_url = import.meta.env.VITE_DEV_DATABASE_URL;
+		const prod_url = process.env.DATABASE_URL;
+
+		prod_url
+			? console.log('using prod url')
+			: dev_url
+			? console.log('using dev url')
+			: console.log("no db url's found in env");
+
+		this.sql = postgres(prod_url || dev_url, {
 			max: 10,
 			timeout: 60,
 			ssl: { rejectUnauthorized: false }
