@@ -1,5 +1,5 @@
 export async function get(requestEvent) {
-	if (import.meta.env.VITE_SESSION_LOGGING !== 'true') {
+	if (import.meta.env.VITE_SESSION_LOGGING) {
 		console.log('session logging is disabled');
 		return;
 	}

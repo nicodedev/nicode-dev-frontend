@@ -26,7 +26,7 @@ const lastCall = new Date(0);
 let weather;
 
 export async function get() {
-	if (import.meta.env.VITE_weather !== 'true') return;
+	if (import.meta.env.VITE_weather) return;
 
 	const now = new Date();
 
