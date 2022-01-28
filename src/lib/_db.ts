@@ -56,7 +56,18 @@ export const consultants: ConsultantType[] = [
 				period: { from: '2019-06', to: '2021-12' },
 				description:
 					'A startup developing a digital marketing platform for multichannel programmatic advertising. My role was development and design of the frontend application. I entered quite early, and my responsibilities grew naturally with the needs of the team; where I took part in planning and design of the architecture, models, and workflows.',
-				tags: ['JavaScript', 'Svelte', 'Sapper', 'Express', 'Node', 'Affinity Designer', 'Docker']
+				tags: [
+					'JavaScript',
+					'SvelteKit',
+					'Sapper',
+					'Express',
+					'Node',
+					'Affinity Designer',
+					'Docker',
+					'Squidex',
+					'Firebase',
+					'CI/CD'
+				]
 			},
 			{
 				title: 'Developer and research assistant at University of Bergen',
