@@ -1,7 +1,18 @@
+const called = {
+	epoch: null,
+	last: null
+};
+
 export async function get(requestEvent) {
 	if (!import.meta.env.VITE_SESSION_LOGGING) {
 		console.log('session logging is disabled');
 		return;
+	}
+
+	// return called if not older than 1 minutes
+	if (called.epoch && called.epoch > Date.now() - 60 * 1000) {
+		console.log('session logging is called less than 1 minute ago');
+		return called.last;
 	}
 
 	const db = requestEvent.locals.db;
@@ -39,5 +50,8 @@ export async function get(requestEvent) {
 		return acc;
 	}, {});
 
-	return { body: { ..._sessions, okReq: Object.entries(_sessionRequests) } };
+	called.epoch = Date.now();
+	called.last = { body: { ..._sessions, okReq: Object.entries(_sessionRequests) } };
+
+	return called.last;
 }
