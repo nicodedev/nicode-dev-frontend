@@ -29,9 +29,13 @@ export async function get(requestEvent) {
 	);
 
 	const _sessionRequests = sessionRequests.reduce((acc, sessionRequest) => {
-		const { path } = sessionRequest;
-		if (!acc[path]) acc[path] = 0;
-		acc[path]++;
+		const { path, visits } = sessionRequest;
+		if (!acc[path]) {
+			acc[path] = { visits, uniqe: 1 };
+		} else {
+			acc[path].visits += visits;
+			acc[path].uniqe++;
+		}
 		return acc;
 	}, {});
 
