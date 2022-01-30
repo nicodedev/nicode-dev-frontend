@@ -1,4 +1,4 @@
-import { blogPosts } from '$lib/db';
+import { blogPosts } from '$lib/_db';
 import { getTextStats } from './_utils';
 
 export const get = async () => {

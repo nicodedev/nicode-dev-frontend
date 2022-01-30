@@ -1,7 +1,12 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ stuff }) => {
-		const consultants: ConsultantType[] = stuff.consultants;
+	export const load: Load = async ({ fetch }) => {
+		const res = await fetch(`index.json`);
+
+		if (!res.ok) return;
+
+		const { consultants } = await res.json();
+
 		return { props: { consultants } };
 	};
 </script>
@@ -16,6 +21,9 @@
 
 <svelte:head>
 	<title>nicode</title>
+	{#each consultants as { headshot }}
+		<link rel="preload" as="image" href={headshot} />
+	{/each}
 </svelte:head>
 
 <Background bgvariation={new Date().getMinutes()}>
@@ -33,6 +41,7 @@
 		<ConsultantCta {consultants} />
 	</div>
 </article>
+
 <style>
 	article {
 		gap: var(--box-space);

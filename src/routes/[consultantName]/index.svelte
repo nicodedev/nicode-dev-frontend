@@ -1,9 +1,11 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ stuff, page }) => {
-		const consultant = await stuff.consultants.find(({ name }) => {
-			return name.toLowerCase() === page.params.consultantName.toLowerCase();
-		});
+	export const load: Load = async ({ page, fetch }) => {
+		const res = await fetch(`/${page.params.consultantName}.json`);
+
+		if (!res.ok) return;
+
+		const { consultant } = await res.json();
 
 		if (!consultant) return;
 

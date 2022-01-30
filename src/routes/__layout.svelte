@@ -1,17 +1,3 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	export const prerender = true;
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch(`index.json`);
-
-		if (!res.ok) return;
-
-		const { consultants } = await res.json();
-
-		return { stuff: { consultants }, props: { consultants } };
-	};
-</script>
-
 <script lang="ts">
 	import '@fontsource/archivo';
 	import '../default.css';
@@ -20,8 +6,6 @@
 	import { session } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { prettyTime } from '$lib/utils';
-
-	export let consultants;
 
 	onMount(() => {
 		// uptime
@@ -35,12 +19,6 @@
 		);
 	});
 </script>
-
-<svelte:head>
-	{#each consultants as { headshot }}
-		<link rel="preload" as="image" href={headshot} />
-	{/each}
-</svelte:head>
 
 <div style="display: contents;">
 	<header>
