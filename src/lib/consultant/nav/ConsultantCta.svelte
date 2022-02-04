@@ -3,7 +3,6 @@
 </script>
 
 <section>
-	<h2>Contact us!</h2>
 	<ul>
 		{#each consultants as { name }}
 			<li>
@@ -17,11 +16,16 @@
 
 <style>
 	section {
+		display: flex;
+		align-items: center;
 		padding: calc(var(--box-space) * 0.4);
 	}
-	h2 {
-		margin-top: -0.4em;
+	@media (min-width: 550px) {
+		section {
+			justify-content: end;
+		}
 	}
+
 	ul {
 		display: flex;
 		gap: 0.5em;

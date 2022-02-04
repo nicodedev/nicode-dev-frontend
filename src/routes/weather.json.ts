@@ -26,7 +26,10 @@ const lastCall = new Date(0);
 let weather;
 
 export async function get() {
-	if (import.meta.env.VITE_weather) return;
+	if (!import.meta.env.VITE_weather) {
+		console.log('Weather disabled');
+		return;
+	}
 
 	const now = new Date();
 

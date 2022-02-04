@@ -51,7 +51,7 @@ class DB {
 		}
 	}
 
-	async requestEntry({ uid, path }) {
+	async createRequestEntry({ uid, path }) {
 		const resp = await this.sql`
 			INSERT INTO session_requests (sessionid,path)
 			VALUES (${uid},${path})

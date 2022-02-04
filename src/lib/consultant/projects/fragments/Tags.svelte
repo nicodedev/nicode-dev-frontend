@@ -17,19 +17,19 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		gap: 0 0.5em;
+	}
 
-		gap: 0.5em;
+	li {
+		letter-spacing: 0;
+		word-spacing: -0.2rem;
 	}
-	ul::before,
-	ul::after {
-		font-weight: bold;
-		font-size: 1.3em;
+
+	li:last-of-type:after {
+		content: ' ]';
 	}
-	ul::after {
-		content: ']';
-	}
-	ul::before {
-		content: '[';
+	li:first-of-type:before {
+		content: '[ ';
 	}
 	li:not(:last-of-type)::after {
 		content: ',';

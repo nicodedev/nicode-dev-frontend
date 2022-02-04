@@ -20,15 +20,13 @@
 	});
 </script>
 
-<div style="display: contents;">
-	<header>
-		<Navigation />
-	</header>
+<header>
+	<Navigation />
+</header>
 
-	<main>
-		<slot />
-	</main>
-</div>
+<main>
+	<slot />
+</main>
 
 <style>
 	header,
@@ -47,7 +45,7 @@
 
 	header {
 		--pheader: calc(var(--box-space) * 0.5);
-		padding: var(--pheader) calc(var(--pheader) + 30px) var(--pheader) var(--pheader);
+		padding: var(--pheader);
 	}
 	main {
 		flex: auto;

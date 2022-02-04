@@ -9,14 +9,10 @@ prod preview `npm run preview`
 envs
 
 ```yaml
-# prod
-DATABASE_URL
-
-# dev
-VITE_DEV_DATABASE_URL
-
-# both
-VITE_SESSION_LOGGING
-VITE_weather
+DATABASE_URL # prod only
+VITE_DEV_DATABASE_URL # dev only
+VITE_SESSION_LOGGING # enabled turns on logging to db
+VITE_stats # if statsroute is available
+VITE_weather # ...
 
 ```

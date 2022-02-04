@@ -4,8 +4,17 @@ const called = {
 };
 
 export async function get(requestEvent) {
+	if (!import.meta.env.VITE_stats) {
+		console.log('Stats disabled');
+		return;
+	}
 	if (!import.meta.env.VITE_SESSION_LOGGING) {
 		console.log('session logging is disabled');
+		return;
+	}
+	const db = requestEvent.locals.db;
+	if (!db) {
+		console.log('session logging is called without db');
 		return;
 	}
 
@@ -15,7 +24,6 @@ export async function get(requestEvent) {
 		return called.last;
 	}
 
-	const db = requestEvent.locals.db;
 	const sessions = await db.getSessions();
 	const sessionRequests = await db.getSessionRequests();
 

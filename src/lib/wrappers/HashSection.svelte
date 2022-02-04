@@ -29,14 +29,4 @@
 		max-width: max-content;
 		margin-bottom: 0.5em;
 	}
-
-	@media (min-width: 1100px) {
-		section h2 {
-			position: relative;
-		}
-		section h2 a {
-			position: absolute;
-			left: -1em;
-		}
-	}
 </style>

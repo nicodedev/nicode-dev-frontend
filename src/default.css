@@ -12,11 +12,10 @@ body {
 	scrollbar-width: thin;
 }
 
-/* scrollbar jump fix */
+/* scrollbar jump fix 2*/
 @media screen and (min-width: 960px) {
-	html {
-		margin-right: calc(100vw - 100%);
-		margin-left: 0;
+	body {
+		overflow-y: scroll;
 	}
 }
 
@@ -137,8 +136,8 @@ ul {
 	width: 100%;
 	max-width: var(--main-content-width);
 
-	padding: var(--box-space);
-	margin: calc(var(--section-space) / 2) 0;
+	padding: calc(var(--box-space) * 2) var(--box-space);
+	margin: calc(var(--section-space) / 2) 0 var(--section-space) 0;
 }
 
 @media (max-width: 550px) {
