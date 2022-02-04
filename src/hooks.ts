@@ -6,8 +6,6 @@ import { getDB } from '$lib/pgutil';
 
 const uptime = new Date().getTime();
 
-console.log(import.meta.env);
-
 let db = null;
 
 export const handle: Handle = async ({ request, resolve }) => {
