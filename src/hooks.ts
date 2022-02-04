@@ -6,6 +6,8 @@ import { getDB } from '$lib/pgutil';
 
 const uptime = new Date().getTime();
 
+console.log(import.meta.env);
+
 let db = null;
 
 export const handle: Handle = async ({ request, resolve }) => {
@@ -50,7 +52,7 @@ export const handle: Handle = async ({ request, resolve }) => {
 	// to exclude, use cookie.userid
 	if (request.locals.db && statusOk) {
 		const _path = request.path;
-		db.requestEntry({ uid: request.locals.userid, path: _path });
+		db.createRequestEntry({ uid: request.locals.userid, path: _path });
 	}
 
 	// request, response log

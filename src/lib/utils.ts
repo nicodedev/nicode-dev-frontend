@@ -1,3 +1,5 @@
+import { browser } from '$app/env';
+
 class Debounce {
 	func: Function;
 	cooldown: number;
@@ -56,4 +58,9 @@ function prettyTime(ms: number) {
 	};
 }
 
-export { Debounce, generateId, clamp, prettyTime };
+function getCssVariable(name: string, node) {
+	if (!browser || !name) return;
+	return window.getComputedStyle(node || document.documentElement).getPropertyValue(name);
+}
+
+export { Debounce, generateId, clamp, prettyTime, getCssVariable };

@@ -12,10 +12,9 @@
 </script>
 
 <script lang="ts">
+	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
 	import Background from '$lib/backdrops/Background.svelte';
 	import Nodes from '$lib/backdrops/Nodes.svelte';
-	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
-
 	export let consultants: ConsultantType[];
 </script>
 
@@ -26,9 +25,8 @@
 	{/each}
 </svelte:head>
 
-<Background bgvariation={new Date().getMinutes()}>
-	<Nodes />
-</Background>
+<Background bgvariation={new Date().getMinutes()} />
+<Nodes />
 
 <article class="page">
 	<h1><span>Welcome to</span> <span>nicode</span></h1>
@@ -51,6 +49,8 @@
 		justify-content: center;
 	}
 	h1 {
+		text-align: center;
+
 		font-size: 4em;
 	}
 	h1 > span:first-of-type {
@@ -81,7 +81,6 @@
 		h1 {
 			max-width: 8ch;
 			line-height: 1.2;
-			text-align: center;
 		}
 		p {
 			padding: calc(var(--box-space) * 0.2);

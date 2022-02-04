@@ -3,20 +3,20 @@
 </script>
 
 <nav>
-	<div>
+	<section>
 		<a
 			href="/"
 			aria-label="front page"
 			aria-current={$page.path === '/' ? 'page' : undefined}
 			class:current={$page.path === '/'}
 		>
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+			<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 				<title>Nicode</title>
 				<description>A circle with the letter "N" inside, created by a single line</description>
 				<path pathLength="100" d="m50 50 20-20v40L30 30v54.6A40 40 0 1 1 50 90" />
 			</svg>
 		</a>
-	</div>
+	</section>
 	<!-- <div>
 		<a href="/blog">
 			<span>blog</span>
@@ -42,16 +42,15 @@
 		align-items: center;
 		justify-content: center;
 	}
-	div {
+	section {
 		display: flex;
 		align-items: center;
 		gap: var(--space);
 	}
-	svg {
+	.logo {
 		height: 55px;
 	}
-
-	path {
+	.logo path {
 		stroke: var(--color-interactive);
 		fill: none;
 		stroke-width: 5;
@@ -60,8 +59,7 @@
 
 		transition: stroke 0.2s ease-in-out;
 	}
-
-	.current path {
+	.current .logo path {
 		stroke: var(--color-content);
 	}
 </style>
