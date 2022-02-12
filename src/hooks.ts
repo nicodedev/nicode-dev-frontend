@@ -4,6 +4,8 @@ import type { Handle, GetSession } from '@sveltejs/kit';
 import useragent from 'useragent';
 import { getDB } from '$lib/pgutil';
 
+console.log(import.meta.env);
+
 const uptime = new Date().getTime();
 
 let db = null;

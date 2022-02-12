@@ -1,5 +1,5 @@
 import { blogPosts } from '$lib/_db';
-import { getTextStats } from './_utils';
+import { getTextStats } from '$lib/utils';
 
 export const get = async () => {
 	const posts: BlogPostType[] = blogPosts

@@ -30,23 +30,14 @@ type PeriodType = {
 	to?: string;
 };
 
-//
-
 type BlogPostType = {
-	visible: boolean;
-	author: string;
-	published: string;
-	updated?: string;
 	tags: string[];
 	slug: string;
 	title: string;
 	content: string;
+	published: string;
+	visible: boolean;
+	updated?: string;
 	author: string;
-	meta?: PostMetaType;
-};
-
-type PostMetaType = {
-	readability: number;
-	readingTime: number;
-	wordCount: number;
+	meta?: any;
 };
