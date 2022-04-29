@@ -1,11 +1,8 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
+
 	export const load: Load = async ({ page, fetch }) => {
-		const res = await fetch(`/${page.params.consultantName}.json`);
-
-		if (!res.ok) return;
-
-		const { consultant } = await res.json();
+		let consultant = consultants.filter(({ name }) => name === page.params.consultantName)[0];
 
 		if (!consultant) return;
 
@@ -17,10 +14,11 @@
 	import Projects from '$lib/consultant/projects/Projects.svelte';
 	import ConsultantHeroSection from '$lib/consultant/hero/ConsultantHeroSection.svelte';
 	import HashSection from '$lib/wrappers/HashSection.svelte';
+	import { consultants } from '$lib/_db';
 
 	export let consultant: ConsultantType;
 
-	let { availability, focus } = consultant;
+	let { availability, focus, contact } = consultant;
 </script>
 
 <svelte:head>
@@ -35,7 +33,7 @@
 			{focus}
 		</p>
 		<p>
-			{availability} <a href="mailto:{consultant.contact.email}">Contact me!</a>
+			{availability} <a href="mailto:{contact.email}">Contact me!</a>
 		</p>
 	</HashSection>
 

@@ -1,21 +1,8 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch(`index.json`);
-
-		if (!res.ok) return;
-
-		const { consultants } = await res.json();
-
-		return { props: { consultants } };
-	};
-</script>
-
 <script lang="ts">
 	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
 	import Background from '$lib/backdrops/Background.svelte';
 	import Nodes from '$lib/backdrops/Nodes.svelte';
-	export let consultants: ConsultantType[];
+	import { consultants } from '$lib/_db';
 </script>
 
 <svelte:head>
