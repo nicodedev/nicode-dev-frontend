@@ -7,8 +7,8 @@
 		<a
 			href="/"
 			aria-label="front page"
-			aria-current={$page.path === '/' ? 'page' : undefined}
-			class:current={$page.path === '/'}
+			aria-current={$page.url.pathname === '/' ? 'page' : undefined}
+			class:current={$page.url.pathname === '/'}
 		>
 			<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 				<title>Nicode</title>
@@ -17,11 +17,6 @@
 			</svg>
 		</a>
 	</section>
-	<!-- <div>
-		<a href="/blog">
-			<span>blog</span>
-		</a>
-	</div> -->
 </nav>
 
 <style>

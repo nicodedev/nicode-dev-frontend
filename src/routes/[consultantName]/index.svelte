@@ -1,8 +1,8 @@
 <script context="module" lang="ts">
 	import type { Load } from '@sveltejs/kit';
 
-	export const load: Load = async ({ page, fetch }) => {
-		let consultant = consultants.filter(({ name }) => name === page.params.consultantName)[0];
+	export const load: Load = async ({ params }) => {
+		let consultant = consultants.filter(({ name }) => name === params.consultantName)[0];
 
 		if (!consultant) return;
 
