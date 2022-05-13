@@ -4,7 +4,7 @@
 	export const load: Load = async ({ params }) => {
 		let consultant = consultants.filter(({ name }) => name === params.consultantName)[0];
 
-		if (!consultant) return;
+		if (!consultant) return { status: 404 };
 
 		return { props: { consultant } };
 	};

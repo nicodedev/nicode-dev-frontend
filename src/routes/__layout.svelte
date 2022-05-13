@@ -3,21 +3,6 @@
 	import '../default.css';
 	import '../config.css';
 	import Navigation from '$lib/nav/Navigation.svelte';
-	import { session } from '$app/stores';
-	import { onMount } from 'svelte';
-	import { prettyTime } from '$lib/utils';
-
-	onMount(() => {
-		// uptime
-
-		console.log(
-			'awake for:',
-			Object.entries(prettyTime($session.stats.awake))
-				.filter(([_, v]) => v > 0)
-				.map(([k, v]) => `${v} ${k}`)
-				.join(' ')
-		);
-	});
 </script>
 
 <header>
