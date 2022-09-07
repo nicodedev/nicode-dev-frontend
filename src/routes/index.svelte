@@ -1,96 +1,43 @@
 <script lang="ts">
-	import ConsultantCta from '$lib/consultant/nav/ConsultantCta.svelte';
-	import Background from '$lib/backdrops/Background.svelte';
-	import Nodes from '$lib/backdrops/Nodes.svelte';
+	import Projects from '$lib/consultant/projects/Projects.svelte';
+	import ConsultantHeroSection from '$lib/consultant/hero/ConsultantHeroSection.svelte';
+	import HashSection from '$lib/wrappers/HashSection.svelte';
 	import { consultants } from '$lib/_db';
+
+	let consultant = consultants[0];
 </script>
 
 <svelte:head>
-	<title>nicode</title>
-	{#each consultants as { headshot }}
-		<link rel="preload" as="image" href={headshot} />
-	{/each}
+	<title>nicode - {consultant.name}</title>
 </svelte:head>
 
-<Background bgvariation={new Date().getMinutes()} />
-<Nodes />
-
 <article class="page">
-	<h1><span>Welcome to</span> <span>nicode</span></h1>
-	<div>
+	<ConsultantHeroSection {consultant} />
+
+	<HashSection title="About Me">
 		<p>
-			<span>
-				We are a tiny consultancy firm focused on people as much as code<span class="blnk">_</span>
-			</span>
+			{consultant.focus}
 		</p>
-		<ConsultantCta {consultants} />
-	</div>
+		<p>
+			{consultant.availability} <a href="mailto:{consultant.contact.email}">Contact me!</a>
+		</p>
+	</HashSection>
+
+	<HashSection title="Experience and projects">
+		<Projects {consultant} />
+	</HashSection>
 </article>
 
 <style>
-	article {
-		gap: var(--box-space);
-		width: max-content;
-
-		min-height: 60%;
-		justify-content: center;
-	}
-	h1 {
-		text-align: center;
-
-		font-size: 4em;
-	}
-	h1 > span:first-of-type {
-		font-weight: normal;
-	}
-
 	p {
-		display: flex;
-		align-items: center;
-		font-size: 1.2em;
-		padding: calc(var(--box-space) * 0.4);
-		max-width: 25ch;
-	}
-	div {
-		gap: 2rem;
-
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-
-		border-radius: 6px;
-		overflow: hidden;
+		font-size: 1.1em;
 	}
 
-	@media (max-width: 550px) {
-		div {
-			grid-template-columns: 1fr;
-		}
-		h1 {
-			max-width: 8ch;
-			line-height: 1.2;
-		}
-		p {
-			padding: calc(var(--box-space) * 0.2);
-			text-align: justify;
-			letter-spacing: 1.4px;
-		}
-		article {
-			align-items: center;
-			font-size: 1.2em;
-			margin: 0;
-			padding: calc(var(--box-space) * 0.5);
-		}
+	p:nth-of-type(2) {
+		margin-top: 1em;
+		font-style: italic;
 	}
-
-	.blnk {
-		animation: blink ease-in-out 0.66s infinite alternate;
-	}
-	@keyframes blink {
-		0% {
-			opacity: 0;
-		}
-		70% {
-			opacity: 1;
-		}
+	article {
+		gap: var(--section-space);
 	}
 </style>

@@ -36,53 +36,53 @@ export const consultants: ConsultantType[] = [
 				tags: ['PowerShell', 'Azure', 'Windows Server', 'Cisco', 'Office365']
 			}
 		]
-	},
-	{
-		visible: true,
-		name: 'Hans',
-		headshot: 'hs/hans.webp',
-		contact: {
-			email: 'hans@nicode.dev',
-			mobile: '+4748149606',
-			linkedin: ''
-		},
-		preamble: 'a developer with a passion for making great user experiences.',
-		availability: "I'm available for full time projects from January 2022.",
-		focus:
-			'A front end developer focusing on node and typescript. Lately I’ve built an application and API for a programmatic advertisement platform powered by svelte and sapper. I have experience as tech lead and ux-designer. I love solving problems and learning something new along the way.',
-		projects: [
-			{
-				title: 'Developer and tech lead at Nurofy',
-				period: { from: '2019-06', to: '2021-12' },
-				description:
-					'A startup developing a digital marketing platform for multichannel programmatic advertising. My role was development and design of the frontend application. I entered quite early, and my responsibilities grew naturally with the needs of the team; where I took part in planning and design of the architecture, models, and workflows.',
-				tags: [
-					'JavaScript',
-					'SvelteKit',
-					'Sapper',
-					'Express',
-					'Node',
-					'Affinity Designer',
-					'Docker',
-					'Squidex',
-					'Firebase',
-					'CI/CD'
-				]
-			},
-			{
-				title: 'Developer and research assistant at University of Bergen',
-				period: { from: '2019-08', to: '2019-11' },
-				description:
-					'Development of a quiz-like application for data collection and comprehension analysis and student course progression. I was tasked with development and design of the frontend, communicating with a python-based rest API.',
-				tags: ['JavaScript', 'Sapper', 'Python', 'Affinity Designer']
-			},
-			{
-				title: 'Consultant at Thriving Ventures AB',
-				period: { from: '2019-04', to: '2019-06' },
-				description:
-					'A company developing a SaaS solution for administration and monetization of game servers. The project consisted of creating a landing page, logo and profile. I had a great time communicating with the client and figuring out exactly what was needed to deliver a satisfying product.',
-				tags: ['JavaScript', 'Svelte', 'Adobe Illustrator']
-			}
-		]
 	}
+	// {
+	// 	visible: false,
+	// 	name: 'Hans',
+	// 	headshot: 'hs/hans.webp',
+	// 	contact: {
+	// 		email: 'hans@nicode.dev',
+	// 		mobile: '+4748149606',
+	// 		linkedin: ''
+	// 	},
+	// 	preamble: 'a developer with a passion for making great user experiences.',
+	// 	availability: "I'm available for full time projects from January 2022.",
+	// 	focus:
+	// 		'A front end developer focusing on node and typescript. Lately I’ve built an application and API for a programmatic advertisement platform powered by svelte and sapper. I have experience as tech lead and ux-designer. I love solving problems and learning something new along the way.',
+	// 	projects: [
+	// 		{
+	// 			title: 'Developer and tech lead at Nurofy',
+	// 			period: { from: '2019-06', to: '2021-12' },
+	// 			description:
+	// 				'A startup developing a digital marketing platform for multichannel programmatic advertising. My role was development and design of the frontend application. I entered quite early, and my responsibilities grew naturally with the needs of the team; where I took part in planning and design of the architecture, models, and workflows.',
+	// 			tags: [
+	// 				'JavaScript',
+	// 				'SvelteKit',
+	// 				'Sapper',
+	// 				'Express',
+	// 				'Node',
+	// 				'Affinity Designer',
+	// 				'Docker',
+	// 				'Squidex',
+	// 				'Firebase',
+	// 				'CI/CD'
+	// 			]
+	// 		},
+	// 		{
+	// 			title: 'Developer and research assistant at University of Bergen',
+	// 			period: { from: '2019-08', to: '2019-11' },
+	// 			description:
+	// 				'Development of a quiz-like application for data collection and comprehension analysis and student course progression. I was tasked with development and design of the frontend, communicating with a python-based rest API.',
+	// 			tags: ['JavaScript', 'Sapper', 'Python', 'Affinity Designer']
+	// 		},
+	// 		{
+	// 			title: 'Consultant at Thriving Ventures AB',
+	// 			period: { from: '2019-04', to: '2019-06' },
+	// 			description:
+	// 				'A company developing a SaaS solution for administration and monetization of game servers. The project consisted of creating a landing page, logo and profile. I had a great time communicating with the client and figuring out exactly what was needed to deliver a satisfying product.',
+	// 			tags: ['JavaScript', 'Svelte', 'Adobe Illustrator']
+	// 		}
+	// 	]
+	// }
 ];
