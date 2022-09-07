@@ -1,5 +1,7 @@
 <script lang="ts">
 	export let consultants;
+
+	$: alt = consultants.length === 1;
 </script>
 
 <section>
@@ -7,7 +9,7 @@
 		{#each consultants as { name }}
 			<li>
 				<a href="/{name}" sveltekit:prefetch>
-					<span>{name}</span>
+					<span>{alt ? 'About Me' : name}</span>
 				</a>
 			</li>
 		{/each}
