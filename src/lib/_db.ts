@@ -10,7 +10,7 @@ export const consultants: ConsultantType[] = [
 		},
 		preamble: 'a developer with a passion for people and technology. ',
 		availability:
-			"I'm available for full time projects from August 2022, but I may be open for smaller projects before this.",
+			"I'm available for full time projects from August 2023.",
 		focus:
 			"I'm mainly a backend developer focusing on C# and Go, but I delve into functional front end programming with Elm on my spare time. Lately I've built API's and serverless functions in C# and a high performance real-time bidder in Go. I have experience as a project manager and tech lead, I care about making people and teams do great stuff while having a good time.",
 		projects: [
