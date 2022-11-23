@@ -7,9 +7,6 @@
 
 <svelte:head>
 	<title>nicode</title>
-	{#each consultants.filter(({ visible }) => visible) as { headshot }}
-		<link rel="preload" as="image" href={headshot} />
-	{/each}
 </svelte:head>
 
 <Background bgvariation={new Date().getMinutes()} />

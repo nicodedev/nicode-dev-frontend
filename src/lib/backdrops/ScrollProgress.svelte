@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Spring, spring } from 'svelte/motion';
+	import { spring, type Spring } from 'svelte/motion';
 	import { onMount } from 'svelte';
 
 	let scrollY: number;

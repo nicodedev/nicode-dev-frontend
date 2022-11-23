@@ -5,10 +5,12 @@
 	const imgIndex = (variation) => {
 		return Math.max(1, Math.min(((Math.abs(variation) + bgCount - 1) % bgCount) + 1, bgCount));
 	};
+
+	$: imgClass = imgIndex(bgvariation);
 </script>
 
 {#if bgvariation !== null}
-	<div aria-hidden="true" class="bg b{imgIndex(bgvariation)}" />
+	<div aria-hidden="true" class="bg b{imgClass}" />
 {/if}
 
 {#if $$slots.default}

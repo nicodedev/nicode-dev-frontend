@@ -3,6 +3,7 @@
 	import ConsultantHeroSection from '$lib/consultant/hero/ConsultantHeroSection.svelte';
 	import HashSection from '$lib/wrappers/HashSection.svelte';
 	import { consultants } from '$lib/_db';
+	import Background from '$lib/backdrops/Background.svelte';
 
 	let consultant = consultants[0];
 </script>
@@ -10,6 +11,8 @@
 <svelte:head>
 	<title>nicode - {consultant.name}</title>
 </svelte:head>
+
+<Background bgvariation={new Date().getMinutes()} />
 
 <article class="page">
 	<ConsultantHeroSection {consultant} />
