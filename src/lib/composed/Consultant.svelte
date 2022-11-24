@@ -4,6 +4,7 @@
 	import HashSection from '$lib/wrappers/HashSection.svelte';
 	import { consultants } from '$lib/_db';
 	import Background from '$lib/backdrops/Background.svelte';
+	import Nodes from '$lib/backdrops/Nodes.svelte';
 
 	let consultant = consultants[0];
 </script>
@@ -13,6 +14,7 @@
 </svelte:head>
 
 <Background bgvariation={new Date().getMinutes()} />
+<Nodes />
 
 <article class="page">
 	<ConsultantHeroSection {consultant} />
