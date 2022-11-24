@@ -143,12 +143,13 @@ ul {
 @media (max-width: 550px) {
 	.page {
 		margin: calc(var(--section-space) / 4) 0;
+		padding: var(--box-space);
 	}
 }
 
 @supports (backdrop-filter: blur(0)) {
 	.page {
-		border-radius: 12px;
+		border-radius: 6px;
 		backdrop-filter: blur(10px) brightness(0.87);
 	}
 }
