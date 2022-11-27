@@ -149,10 +149,11 @@ ul {
 		padding: var(--box-space);
 	}
 }
-
-@supports (backdrop-filter: blur(0)) {
-	.page {
-		background-color: transparent;
-		backdrop-filter: blur(10px) brightness(0.87);
+@media (min-width: 600px) {
+	@supports (backdrop-filter: blur(0)) {
+		.page {
+			background-color: transparent;
+			backdrop-filter: blur(10px) brightness(0.87);
+		}
 	}
 }

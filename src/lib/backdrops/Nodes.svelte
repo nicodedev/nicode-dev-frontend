@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Debounce, generateId } from '$lib/utils';
 	import { onMount } from 'svelte';
-	let W, H, DPR, canvas, ctx;
+	let W, H, canvas, ctx, vmin;
 	let points = [];
+	let nodeCount = 0;
 
 	const resizeCooldown = new Debounce(() => {
 		canvas.width = W;
 		canvas.height = H;
-
-		DPR = window.devicePixelRatio;
+		vmin = Math.min(W, H);
 		points = [];
 	}, 100);
 
@@ -44,7 +44,7 @@
 		}
 		update(ps) {
 			this.drawTo = [];
-			const maxRange = Math.min((W + H / 2) / (6 * DPR), 200) * DPR;
+			const maxRange = Math.min(vmin / 5, 200);
 			for (let i = 0; i < ps.length; i++) {
 				if (this.id < ps[i].id) {
 					if (this.distanceTo(ps[i]) < maxRange) {
@@ -86,8 +86,8 @@
 			this.y = Math.random() * H;
 		}
 		randomize() {
-			this.vx = (Math.random() * 2 - 1) * 0.04;
-			this.vy = (Math.random() * 2 - 1) * 0.04;
+			this.vx = (Math.random() * 10 - 5) * 0.03;
+			this.vy = (Math.random() * 10 - 5) * 0.03;
 		}
 	}
 
@@ -105,7 +105,7 @@
 
 			ctx.clearRect(0, 0, W, H);
 
-			const nodeCount = Math.min((W + H / 2) / (20 * DPR), 200) * DPR;
+			nodeCount = Math.min(vmin / 15, 150);
 
 			if (points.length < nodeCount) {
 				points.push(new Point(idIter.next().value));

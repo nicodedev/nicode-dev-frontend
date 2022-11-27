@@ -7,14 +7,20 @@
 	import Nodes from '$lib/backdrops/Nodes.svelte';
 
 	let consultant = consultants[0];
+
+	let innerWidth;
 </script>
 
 <svelte:head>
 	<title>nicode - {consultant.name}</title>
 </svelte:head>
 
+<svelte:window bind:innerWidth />
+
 <Background bgvariation={new Date().getMinutes()} />
-<Nodes />
+{#if innerWidth > 600}
+	<Nodes />
+{/if}
 
 <article class="page">
 	<ConsultantHeroSection {consultant} />
