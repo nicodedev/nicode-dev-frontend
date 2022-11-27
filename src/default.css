@@ -59,7 +59,7 @@ body {
 	margin: 0;
 }
 
-body > div#svelte {
+body > div#nicodeapp {
 	/* helps to have a default sized page */
 	display: flex;
 	flex-direction: column;
@@ -136,12 +136,20 @@ ul {
 	width: 100%;
 	max-width: var(--main-content-width);
 
-	padding: calc(var(--box-space) * 2) var(--box-space);
+	padding: calc(var(--box-space) * 2);
 	margin: calc(var(--section-space) / 2) 0 var(--section-space) 0;
 }
 
 @media (max-width: 550px) {
 	.page {
 		margin: calc(var(--section-space) / 4) 0;
+		padding: var(--box-space);
+	}
+}
+
+@supports (backdrop-filter: blur(0)) {
+	.page {
+		border-radius: 6px;
+		backdrop-filter: blur(10px) brightness(0.87);
 	}
 }
