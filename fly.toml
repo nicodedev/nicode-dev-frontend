@@ -1,4 +1,4 @@
-# fly.toml file generated for nicode-front on 2022-11-27T18:49:14+01:00
+# fly.toml file generated for nicode-front on 2022-11-27T19:55:01+01:00
 
 app = "nicode-front"
 kill_signal = "SIGINT"
