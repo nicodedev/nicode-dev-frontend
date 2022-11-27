@@ -138,6 +138,9 @@ ul {
 
 	padding: calc(var(--box-space) * 2);
 	margin: calc(var(--section-space) / 2) 0 var(--section-space) 0;
+
+	border-radius: 6px;
+	background-color: var(--color-background);
 }
 
 @media (max-width: 550px) {
@@ -149,7 +152,7 @@ ul {
 
 @supports (backdrop-filter: blur(0)) {
 	.page {
-		border-radius: 6px;
+		background-color: transparent;
 		backdrop-filter: blur(10px) brightness(0.87);
 	}
 }
