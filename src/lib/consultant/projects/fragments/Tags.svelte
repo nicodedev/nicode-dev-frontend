@@ -22,14 +22,16 @@
 
 	li {
 		letter-spacing: 0;
-		word-spacing: -0.2rem;
+		white-space: nowrap;
 	}
 
 	li:last-of-type:after {
-		content: ' ]';
+		content: ']';
+		margin-left: 0.4em;
 	}
 	li:first-of-type:before {
-		content: '[ ';
+		content: '[';
+		margin-right: 0.4em;
 	}
 	li:not(:last-of-type)::after {
 		content: ',';
