@@ -8,17 +8,17 @@
 
 	let consultant = consultants[0];
 
-	let innerWidth;
+	let innerWidth, innerHeight;
 </script>
 
 <svelte:head>
 	<title>nicode - {consultant.name}</title>
 </svelte:head>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <Background bgvariation={new Date().getMinutes()} />
-{#if innerWidth > 600}
+{#if innerWidth > 600 && innerHeight > 600}
 	<Nodes />
 {/if}
 

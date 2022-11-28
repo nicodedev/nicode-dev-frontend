@@ -9,6 +9,8 @@
 		canvas.width = W;
 		canvas.height = H;
 		vmin = Math.min(W, H);
+		nodeCount = Math.min(vmin / 20, 100);
+
 		points = [];
 	}, 100);
 
@@ -40,7 +42,6 @@
 				ctx.lineTo(p.x, p.y);
 				ctx.stroke();
 			}
-			ctx.fillText(this.drawTo.length, this.x + 5, this.y - 5);
 		}
 		update(ps) {
 			this.drawTo = [];
@@ -98,14 +99,10 @@
 		const idIter = generateId();
 
 		const rafLoop = () => {
-			ctx.font = `12px sans-serif`;
 			ctx.fillStyle = 'hsla(260, 80%, 30%)';
 			ctx.strokeStyle = 'hsla(260, 80%, 30%)';
 			ctx.lineWidth = 1;
-
 			ctx.clearRect(0, 0, W, H);
-
-			nodeCount = Math.min(vmin / 15, 150);
 
 			if (points.length < nodeCount) {
 				points.push(new Point(idIter.next().value));

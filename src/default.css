@@ -140,20 +140,40 @@ ul {
 	margin: calc(var(--section-space) / 2) 0 var(--section-space) 0;
 
 	border-radius: 6px;
+
+	position: relative;
+}
+.page::after {
+	border-radius: 6px;
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -2;
 	background-color: var(--color-background);
+	opacity: 0.7;
 }
 
 @media (max-width: 550px) {
 	.page {
-		margin: calc(var(--section-space) / 4) 0;
+		margin: 0;
 		padding: var(--box-space);
+		margin-bottom: calc(var(--section-space) / 2);
 	}
 }
-@media (min-width: 600px) {
+/* bg blur stuff */
+@media (min-width: 1000px) and (min-height: 1000px) {
 	@supports (backdrop-filter: blur(0)) {
 		.page {
 			background-color: transparent;
-			backdrop-filter: blur(10px) brightness(0.87);
+			backdrop-filter: brightness(0.9) blur(5px);
+		}
+		.page::after {
+			background-color: transparent;
+			opacity: 0.1;
+			border: 1px solid var(--color-background);
 		}
 	}
 }
