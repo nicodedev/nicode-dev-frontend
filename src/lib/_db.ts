@@ -12,8 +12,22 @@ export const consultants: ConsultantType[] = [
 		availability:
 			"I'm available for full time projects from August 2023.",
 		focus:
-			"I'm mainly a backend developer focusing on C# and Go, but I delve into functional front end programming with Elm on my spare time. Lately I've built API's and serverless functions in C# and a high performance real-time bidder in Go. I have experience as a project manager and tech lead, I care about making people and teams do great stuff while having a good time.",
+			"I'm mainly a backend developer focusing on Go, but I delve into game programming and explore different languages. I have experience as a project manager and tech lead, I care about making people and teams do great stuff while having a good time.",
 		projects: [
+			{
+				title: 'CTO at Lyll',
+				period: { from: '2021-08', to: 'Present' },
+				description:
+					"Lyll is a digital marketing platform that enables small and medium sized businesses to advertise on online newspapers. The platform is built on a Go backend with React frontend.",
+				tags: ['Go', 'Docker', 'PostgreSQL', 'CI/CD', 'Gitlab']
+			},
+			{
+				title: 'Developer at Plug Insight',
+				period: { from: '2021-02', to: '2022-12' },
+				description:
+					"Plug Insight is a system for monitoring and managing shore power facilities for ships. The port has full overview of all vessels present and how much power they are consuming. It has interfaces with equipment in the port to read data and alarms.",
+				tags: ['Go', 'Docker', 'PostgreSQL', 'CI/CD', 'Gitlab']
+			},
 			{
 				title: 'Team lead at Nurofy',
 				period: { from: '2019-02', to: '2020-12' },
