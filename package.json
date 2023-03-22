@@ -2,6 +2,7 @@
   "name": "nicode",
   "version": "0.0.1",
   "scripts": {
+    "start": "node .svelte-kit/output/server/index.js",
     "dev": "vite dev",
     "build": "vite build",
     "package": "svelte-kit package",
