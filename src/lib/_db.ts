@@ -10,7 +10,7 @@ export const consultants: ConsultantType[] = [
 		},
 		preamble: 'a developer with a passion for people and technology. ',
 		availability:
-			"I'm available for projects from August 2023.",
+			"I'm available for projects from October 2023.",
 		focus:
 			"I'm mainly a backend developer with experience in Go and C#, but I delve into game programming and explore different languages. I have experience as a project manager and tech lead, I care about making people and teams do great stuff while having a good time.",
 		projects: [
@@ -19,6 +19,13 @@ export const consultants: ConsultantType[] = [
 				period: { from: '2021-08', to: 'Present' },
 				description:
 					"Lyll is a digital marketing platform that enables small and medium sized businesses to advertise on online newspapers. The platform is built on a Go backend with React frontend.",
+				tags: ['Go', 'Docker', 'PostgreSQL', 'CI/CD', 'Gitlab']
+			},
+			{
+				title: 'Tech lead Aqua Track at Lerøy Seafood',
+				period: { from: '2023-08', to: 'Present' },
+				description:
+					"Aqua Track is a project displaying fish farms in a map combining geographic features of a facility with data on fish health and feeding and tracking of nearby vessels. My role as tech lead was planning features and road map for the team and accountable for the deliveries for the team as well as doing the backend implementation of the project.",
 				tags: ['Go', 'Docker', 'PostgreSQL', 'CI/CD', 'Gitlab']
 			},
 			{
